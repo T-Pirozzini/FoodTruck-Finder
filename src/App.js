@@ -1,6 +1,4 @@
-
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 
 //styles
 import './App.css';
@@ -13,9 +11,10 @@ function App() {
 
   return (
     
-    <div className="App" style={{width: "100%", height: "100%", margin: "10px"}}>    
+    <div className="App">    
       
       <Nav />      
+
       <TruckCard />
       <Map />
     </div>

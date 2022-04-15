@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <div className="nav-container">
       <div className="nav-title">
-        <h2>Foodtruck Finder</h2>
+        <h2>FoodTruck Finder</h2>
       </div>
       <div className="nav-items">      
         <div>Favourites</div>
