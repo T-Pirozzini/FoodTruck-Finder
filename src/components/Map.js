@@ -8,8 +8,9 @@ const containerStyle = {
 
 const center = {
   lat: 53.631611,
+
   lng: -113.323975,
-};
+
 
 function MyComponent() {
   const { isLoaded } = useJsApiLoader({
