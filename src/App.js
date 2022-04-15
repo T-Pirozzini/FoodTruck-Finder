@@ -1,15 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//styles
 import './App.css';
-import MyComponent from './Map';
+//components
+import MyComponent from './components/Map';
+import TruckCard from './components/TruckCard';
 
-
-
-function App() {
-  
+function App() {  
 
   return (
-    <div className="App" style={{width: "100%", height: "100%", margin: "10px"}}>
-      Foodtruck
+    
+    <div className="App" style={{width: "100%", height: "100%", margin: "10px"}}>      
       
+      Foodtruck
+      <TruckCard />
       <MyComponent />
     </div>
   );
