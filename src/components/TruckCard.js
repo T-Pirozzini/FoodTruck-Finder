@@ -26,16 +26,16 @@ export default function TruckCard( foodTrucks ) {
     </div>
 
 //USE DATA TO GENERATE RESULTS
-    // <div className="cards-container">
-    //   {foodTrucks.map(truck => (
-    //     <div key={truck.id} className="truck-card">
-    //       <h3>{truck.title}</h3>
-    //       <p>{truck.info}</p>
-    //       <p>{truck.rating} stars</p>
-    //       <Link to={`/order/${truck.id}`}>Place An Order</Link>
-    //     </div>
-    //   ))}
-    // </div>
+  //   <div className="cards-container">
+  //     {foodTrucks.map(truck => (
+  //       <div key={truck.id} className="truck-card">
+  //         <h3>{truck.title}</h3>
+  //         <p>{truck.info}</p>
+  //         <p>{truck.rating} stars</p>
+  //         <Link to={`/order/${truck.id}`}>Place An Order</Link>
+  //       </div>
+  //     ))}
+  //   </div>
   )
 }
 
