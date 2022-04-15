@@ -1,0 +1,10 @@
+{
+  "foodTrucks": [
+    {
+      "id": 1,
+      "title": "Spuddies",
+      "info": "Everything potatos! Come enjoy some spuds!",
+      "rating": "4/5"
+    }
+  ]
+}
