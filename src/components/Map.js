@@ -2,26 +2,28 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
-const containerStyle = {
-  width: '80%',
-  height: '800px'
+//styles
+import "./Map.css"
+
+const containerStyle = {  
+  height: '90vh'
 };
 
 const center = {
-  lat: 53.631611,
-  lng: -113.323975
+  lat: 53.5,
+  lng: -113.5
 };
 
-function MyComponent() {
+export default function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_MAP_KEY
   })
   const [map, setMap] = React.useState(null)
-
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
+  
+  const onLoad = React.useCallback(function callback(map) {       
+    // const bounds = new window.google.maps.LatLngBounds();
+    // map.fitBounds(bounds);    
     setMap(map)
   }, [])
 
@@ -29,10 +31,9 @@ function MyComponent() {
     setMap(null)
   }, [])
 
-  return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        
+  return isLoaded ? (    
+      <GoogleMap id="map"
+        mapContainerStyle={containerStyle}        
         center={center}
         zoom={10}
         onLoad={onLoad}
@@ -40,9 +41,8 @@ function MyComponent() {
       >
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
-      </GoogleMap>
+      </GoogleMap>  
   ) : <></>
 }
 
-export default MyComponent
 
