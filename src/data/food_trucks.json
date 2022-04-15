@@ -1,0 +1,37 @@
+{
+  "foodTrucks": [
+    {
+      "id": 1,
+      "truck_name": "Spuddies",
+      "info": "Everything potatos! Come enjoy some spuds!",
+      "rating": "4/5",
+      "location": {
+        "lat": 53.5402,
+        "lng": 113.5009
+      }
+    },
+    {
+      "id": 2,
+      "truck_name": "Dame Un Pyrogy",
+      "info": "Mexican-Polish fusion",
+      "rating": "3/5",
+      "location": {
+        "lat": 53.5702,
+        "lng": 113.5609
+      }
+    },
+    {
+      "id": 3,
+      "truck_name": "Boler Bar",
+      "info": "Coffee truck extroidinaire",
+      "rating": "5/5",
+      "location": {
+        "lat": 53.5302,
+        "lng": 113.5109
+      }
+    }
+  ]
+}
+
+
+   
