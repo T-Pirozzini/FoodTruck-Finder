@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useFetch } from '../hooks/useFetch'
-import client from '../../data/elephantSQL'
+// import client from '../../data/elephantSQL'
 
 // styles
 import './TruckCard.css'
 
 export default function TruckCard() {  
-  // const [url, setUrl] = useState(['http://localhost:3000/foodTrucks'])
-  const [url, setUrl] = useState([client])
+  const [url, setUrl] = useState(['http://localhost:3000/foodTrucks'])
+  // const [url, setUrl] = useState([client])
   const { data: pins } = useFetch(url)  
 
   console.log(pins)
