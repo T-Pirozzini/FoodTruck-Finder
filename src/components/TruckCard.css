@@ -6,9 +6,8 @@
 .cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 25px;
-  max-width: 90%;
-  margin: 10px auto;
+  grid-gap: 25px;  
+  margin: 20px;
 }
 
 .cards-container .truck-card {
