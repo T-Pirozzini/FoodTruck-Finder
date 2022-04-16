@@ -1,7 +1,5 @@
-
 var pg = require('pg');
 require('dotenv').config()
-
 
 var conString = process.env.REACT_APP_ELEPHANTSQL; //Can be found in the Details page
 var client = new pg.Client(conString);
