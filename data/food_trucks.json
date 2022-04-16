@@ -6,7 +6,8 @@
       "info": "Everything potatos!",
       "rating": "4/5",
       "location_lat": 53.5702,
-      "location_lng": 113.5609
+      "location_lng": 113.5609,
+      "category": "potato"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "info": "Mexican-Polish fusion",
       "rating": "3/5",
       "location_lat": 53.9,
-      "location_lng": 113.9
+      "location_lng": 113.9,
+      "category": "potato"
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "info": "Coffee truck extroidinaire",
       "rating": "5/5",
       "location_lat": 53,
-      "location_lng": 113
+      "location_lng": 113,
+      "category": "coffee"
     }
   ]
 }
