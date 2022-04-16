@@ -1,29 +1,50 @@
-const express = require('express');
+const express = require("express");
 // const morgan = require('morgan')
-require('dotenv').config()
-const client = require('./conn.js');
+require("dotenv").config();
 
 // express app
 const app = express();
 const port = 3002;
-const connectionString = process.env.REACT_APP_ELEPHANTSQL
-// const pgp = require("pg-promise")()
-// const db = pgp(connectionString)
 
-// console.log(connectionString)
-// db.connect()
+// con setting
+const pg = require("pg");
+const { Pool } = require("pg");
+const dbParams = require("./db");
+require("dotenv").config();
 
-app.get("/food_trucks", async (req, res) => {
-  try {
-    const results = await client.query('SELECT * FROM trucks');
-    res.json(results);
+const pool = new Pool({
+  host: process.env.REACT_APP_ELEPHANT_PASSWORD,
+  user: "udidwoil",
+  password: "",
+  max: 20,
+  database: "udidwoil",
+  idleTimeoutMillis: 30000,
+  connectionTimeoutMillis: 2000,
+});
 
-} catch (err) {
-    console.log(err);
-}
+const test = {
+  name: "bryce",
+};
+
+app.get("/hello", async (req, res) => {
+  pool.connect((err, client) => {
+    if (!err) {
+      client.query("SELECT * FROM trucks", function (err, result) {
+        if (err) {
+          return console.error("error running query", err);
+        }
+        //  const data = JSON.stringify(result.rows)
+        console.log(result.rows);
+        res.json(result.rows);
+      });
+    }
+  });
+});
+
+app.get("/hi", (req, res) => {
+  res.json(test);
 });
 
 app.listen(port, () => {
-  console.log(`listening on port ${port}`)
-})
-
+  console.log(`listening on port ${port}`);
+});
