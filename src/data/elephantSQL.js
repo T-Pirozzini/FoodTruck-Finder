@@ -1,8 +1,9 @@
 var pg = require('pg');
+require('dotenv').config()
 //or native libpq bindings
 //var pg = require('pg').native
 
-var conString = "postgres://udidwoil:DGDmiggnH2kuTTQiItJsg_4Pm5Hxuv4r@heffalump.db.elephantsql.com/udidwoil" //Can be found in the Details page
+var conString = process.env.REACT_APP_ELEPHANTSQL //Can be found in the Details page
 var client = new pg.Client(conString);
 client.connect(function(err) {
   if(err) {
