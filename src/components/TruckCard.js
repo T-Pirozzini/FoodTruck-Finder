@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useFetch } from '../hooks/useFetch'
 // import client from '../../data/elephantSQL'
 
+
 // styles
 import './TruckCard.css'
 

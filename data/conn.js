@@ -24,4 +24,4 @@ client.connect(function(err) {
   });
 });
 
-// export default client
+export default client

@@ -16,6 +16,7 @@ const connectionString = process.env.REACT_APP_ELEPHANTSQL
 app.get("/food_trucks", async (req, res) => {
   try {
     const results = await client.query('SELECT * FROM trucks');
+    console.log(results)
     res.json(results);
 
 } catch (err) {
