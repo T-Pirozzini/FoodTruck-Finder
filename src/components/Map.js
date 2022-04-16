@@ -1,50 +1,55 @@
+import React from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
-import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import Markers from "./Markers";
+
+//styles
+import "./Map.css";
 
 const containerStyle = {
-  width: '80%',
-  height: '800px'
+  height: "90vh",
 };
 
 const center = {
-  lat: 53.631611,
-
-  lng: -113.323975
-
+  lat: 53.5,
+  lng: -113.5,
 };
 
-function MyComponent() {
+export default function Map() {
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_MAP_KEY
-  })
-  const [map, setMap] = React.useState(null)
+    id: "google-map-script",
+    googleMapsApiKey: process.env.REACT_APP_MAP_KEY,
+  });
+  const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
+    // const bounds = new window.google.maps.LatLngBounds();
+    // map.fitBounds(bounds);
+    setMap(map);
+  }, []);
 
   const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-  }, [])
+    setMap(null);
+  }, []);
 
   return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-  ) : <></>
+    <GoogleMap
+      id="map"
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={10}
+      onLoad={onLoad}
+      onUnmount={onUnmount}
+    >
+      <Marker
+        position={{
+          lat: 53.5,
+          lng: -113.5,
+        }}
+      />
+      <></>
+    </GoogleMap>
+  ) : (
+    <></>
+  );
 }
-
-export default MyComponent
-
