@@ -13,9 +13,9 @@ const dbParams = require("./db");
 require("dotenv").config();
 
 const pool = new Pool({
-  host: process.env.REACT_APP_ELEPHANT_PASSWORD,
+  host: "heffalump.db.elephantsql.com",
   user: "udidwoil",
-  password: "",
+  password: process.env.REACT_APP_ELEPHANT_PASSWORD,
   max: 20,
   database: "udidwoil",
   idleTimeoutMillis: 30000,
