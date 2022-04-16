@@ -13,8 +13,13 @@ client.connect(function(err) {
     if(err) {
       return console.error('error running query', err);
     }
-    console.log(result.rows);
+    // console.log(result.rows);
+    const data = JSON.stringify(result.rows)
+    console.log(data)
+    return data
     // >> output: 2018-08-23T14:02:57.117Z
     client.end();
   });
 });
+
+export default client
