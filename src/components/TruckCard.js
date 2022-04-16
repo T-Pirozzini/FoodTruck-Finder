@@ -6,11 +6,11 @@ import { useFetch } from "../hooks/useFetch";
 import "./TruckCard.css";
 
 export default function TruckCard() {
-  const [url, setUrl] = useState(["http://localhost:3000/foodTrucks"]);
+  const [url, setUrl] = useState("http://localhost:3002/hello");
   // const [url, setUrl] = useState([client])
   const { data: pins } = useFetch(url);
-
-  console.log(pins);
+  console.log("url", url)
+  console.log("pins", pins);
 
   return (
     <div className="main-container">
