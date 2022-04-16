@@ -1,7 +1,6 @@
 var pg = require('pg');
 require('dotenv').config()
-//or native libpq bindings
-//var pg = require('pg').native
+
 
 var conString = process.env.REACT_APP_ELEPHANTSQL //Can be found in the Details page
 var client = new pg.Client(conString);
@@ -19,7 +18,6 @@ client.connect(function(err) {
     // console.log(data)
     // return data
 
-    // >> output: 2018-08-23T14:02:57.117Z
     client.end();
   });
 });
