@@ -1,21 +1,30 @@
 const express = require("express");
 // const morgan = require('morgan')
 require("dotenv").config();
+var cors = require('cors')
 
 // express app
 const app = express();
 const port = 3002;
 
+
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+}
+
+app.use(cors(corsOptions))
+
 // con setting
 const pg = require("pg");
 const { Pool } = require("pg");
-const dbParams = require("./db");
+// const dbParams = require("./db");
 require("dotenv").config();
 
 const pool = new Pool({
-  host: process.env.REACT_APP_ELEPHANT_PASSWORD,
+  host: "heffalump.db.elephantsql.com",
   user: "udidwoil",
-  password: "",
+  password: process.env.REACT_APP_ELEPHANT_PASSWORD,
   max: 20,
   database: "udidwoil",
   idleTimeoutMillis: 30000,
@@ -33,9 +42,10 @@ app.get("/hello", async (req, res) => {
         if (err) {
           return console.error("error running query", err);
         }
-        //  const data = JSON.stringify(result.rows)
-        console.log(result.rows);
-        res.json(result.rows);
+        const data = JSON.stringify(result.rows)
+        // console.log("OBJ", result.rows);
+        // console.log("JSON", data)
+        res.send(data);
       });
     }
   });
