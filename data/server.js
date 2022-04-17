@@ -31,14 +31,10 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
-const test = {
-  name: "bryce",
-};
-
+pool.connect()
 app.get("/hello", async (req, res) => {
-  pool.connect((err, client) => {
-    if (!err) {
-      client.query("SELECT * FROM trucks", function (err, result) {
+   
+      pool.query("SELECT * FROM trucks", function (err, result) {
         if (err) {
           return console.error("error running query", err);
         }
@@ -47,9 +43,9 @@ app.get("/hello", async (req, res) => {
         // console.log("JSON", data)
         res.send(data);
       });
-    }
+    
   });
-});
+
 
 app.get("/hi", (req, res) => {
   res.json(test);
