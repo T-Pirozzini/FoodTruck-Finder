@@ -6,9 +6,16 @@ export const useFetch = (url) => {
 
   // fetch data from url, convert response to json, update setData state
   useEffect(() => {
-    const fetchData = async () => {      
+    console.log("test")
+    if(url.length === 0){
+      console.log("0")
+      return
+    }
+    const fetchData = async () => {            
       const res = await fetch(url)
+      console.log("RES", res)
       const json = await res.json()
+      console.log("JSON", json)
       setData(json)
     }
     // invoke the function

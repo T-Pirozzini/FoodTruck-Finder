@@ -32,6 +32,10 @@ export default function Map() {
     setMap(null);
   }, []);
 
+  const pins = {
+
+  }
+
   return isLoaded ? (
     <GoogleMap
       id="map"
@@ -41,11 +45,8 @@ export default function Map() {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      <Marker
-        position={{
-          lat: 53.5,
-          lng: -113.5,
-        }}
+      <Marker 
+        position={center}
       />
       <></>
     </GoogleMap>
