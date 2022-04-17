@@ -1,8 +1,6 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
-import Markers from "./Markers";
-
 //styles
 import "./Map.css";
 
@@ -15,7 +13,7 @@ const center = {
   lng: -113.5,
 };
 
-export default function Map() {
+export default function Map(props) {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_MAP_KEY,
@@ -32,10 +30,6 @@ export default function Map() {
     setMap(null);
   }, []);
 
-  const pins = {
-
-  }
-
   return isLoaded ? (
     <GoogleMap
       id="map"
@@ -45,9 +39,14 @@ export default function Map() {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      <Marker 
-        position={center}
-      />
+      {props.pins.map((truck) => {
+        return (
+          <Marker
+            key={truck.id}
+            position={{ lat: truck.location_lat, lng: truck.location_lng }}
+          />
+        );
+      })}
       <></>
     </GoogleMap>
   ) : (

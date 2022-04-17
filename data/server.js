@@ -1,19 +1,18 @@
 const express = require("express");
 // const morgan = require('morgan')
 require("dotenv").config();
-var cors = require('cors')
+var cors = require("cors");
 
 // express app
 const app = express();
 const port = 3002;
 
-
 var corsOptions = {
-  origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200
-}
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200,
+};
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
 // con setting
 const pg = require("pg");
@@ -31,23 +30,16 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
-const test = {
-  name: "bryce",
-};
-
+pool.connect();
 app.get("/hello", async (req, res) => {
-  pool.connect((err, client) => {
-    if (!err) {
-      client.query("SELECT * FROM trucks", function (err, result) {
-        if (err) {
-          return console.error("error running query", err);
-        }
-        const data = JSON.stringify(result.rows)
-        // console.log("OBJ", result.rows);
-        // console.log("JSON", data)
-        res.send(data);
-      });
+  pool.query("SELECT * FROM trucks", function (err, result) {
+    if (err) {
+      return console.error("error running query", err);
     }
+    const data = JSON.stringify(result.rows);
+    // console.log("OBJ", result.rows);
+    // console.log("JSON", data)
+    res.send(data);
   });
 });
 
