@@ -5,18 +5,12 @@ import { useFetch } from "../hooks/useFetch";
 // styles
 import "./TruckCard.css";
 
-export default function TruckCard() {
-  const [url, setUrl] = useState("http://localhost:3002/hello");
-  // const [url, setUrl] = useState([client])
-  const { data: pins } = useFetch(url);
-  console.log("url", url)
-  console.log("pins", pins);
-
+export default function TruckCard(props) {
   return (
     <div className="main-container">
       <div className="cards-container">
-        {pins &&
-          pins.map((pin) => (
+        {props.pins &&
+          props.pins.map((pin) => (
             <div key={pin.id} className="truck-card">
               <h3>{pin.truck_name}</h3>
               <p>{pin.info}</p>
@@ -28,7 +22,7 @@ export default function TruckCard() {
           ))}
       </div>
       <div className="filters">
-        <button onClick={() => setUrl("http://localhost:3000/foodTrucks")}>
+        {/* <button onClick={() => setUrl("http://localhost:3000/foodTrucks")}>
           All
         </button>
         <button
@@ -44,7 +38,7 @@ export default function TruckCard() {
           }
         >
           Coffee
-        </button>
+        </button> */}
       </div>
     </div>
   );
