@@ -11,7 +11,7 @@ export const useFetch = (url) => {
       console.log("0")
       return
     }
-    const fetchData = async () => {      
+    const fetchData = async () => {            
       const res = await fetch(url)
       console.log("RES", res)
       const json = await res.json()
