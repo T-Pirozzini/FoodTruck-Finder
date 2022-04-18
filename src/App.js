@@ -1,5 +1,5 @@
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import React from "react";
+import React, { useEffect } from "react";
 import { useFetch } from "./hooks/useFetch";
 //styles
 import "./App.css";
@@ -10,13 +10,23 @@ import Nav from "./components/Nav";
 
 function  App() {
   const [url, setUrl] = React.useState("http://localhost:3002/trucks");
+  const [points,setPoints] = React.useState({})
   const { data: pins } = useFetch(url);
+
+  
+  useEffect(()=> {
+    console.log("pins",pins)
+    pins.map((pin) => pin.expand = false)
+    setPoints(pins)
+  }, [pins])
+
+  
   return (
     <div className="App">
       <Nav />
 
-      <TruckCard pins={pins} url={url} setUrl={setUrl} />
-      <Map pins={pins} />
+      {/* <TruckCard pins={pins} url={url} setUrl={setUrl} /> */}
+      <Map pins={points} setPoints={setPoints} />
     </div>
   );
 }
