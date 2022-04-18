@@ -43,6 +43,7 @@ export default function Map(props) {
     console.log("click event", truck.expand)
     // truck.expand = true
     const newPins = [...props.pins]
+    console.log("NEW PINS", newPins)
     newPins[truck][expand] = true
     props.setPoints([newPins])
     console.log("truck3", truck)
