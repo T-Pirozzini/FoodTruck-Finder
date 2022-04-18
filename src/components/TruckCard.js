@@ -7,9 +7,9 @@ import "./TruckCard.css";
 
 export default function TruckCard(props) {
   // const [url, setUrl] = React.useState(props.url);  
-  console.log("PROPS", props)
-  console.log("TEST", props.url + "/" + "BBQ")
-  console.log("setURL", props.setUrl)
+  // console.log("PROPS", props)
+  // console.log("TEST", props.url + "/" + "BBQ")
+  // console.log("setURL", props.setUrl)
     
   return (
     <div className="main-container">

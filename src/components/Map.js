@@ -10,7 +10,7 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 53.5,
+  lat: 534.96,
   lng: -113.5,
 };
 
@@ -38,21 +38,11 @@ export default function Map(props) {
       id="map"
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10}
+      zoom={13}
       onLoad={onLoad}
       onUnmount={onUnmount}
-    >
-      {props.pins.map((truck) => {
-        return (
-          <InfoWindow
-            key={truck.id} 
-            position={{ lat: truck.location_lat + .002, lng: truck.location_lng + -.0008 }}
-          >            
-            <div className="truck-info">{truck.truck_name}</div
-          >
-          </InfoWindow>
-        )})}
-
+    >   
+    
       {props.pins.map((truck) => {
         return (          
           <Marker
@@ -64,7 +54,27 @@ export default function Map(props) {
               scaledSize: new window.google.maps.Size(42, 42)
             }}
             title={"truck.truck_name"}
-          >            
+          >     
+            <InfoWindow
+              id="info-window"
+              key={truck.id} 
+              position={{ lat: truck.location_lat + .002, lng: truck.location_lng + -.0008 }}
+              // onCloseClick={() => setInfoWindowVisible(false)}       
+            >        
+                
+
+      <div key={truck.id} className="truck-card">
+              <h3>{truck.truck_name}</h3>
+              <p>{truck.info}</p>
+              <p>{truck.rating}</p>
+              <p>
+                {truck.location_lng}, {truck.location_lat}
+              </p>
+            </div>
+
+
+            </InfoWindow>
+            
           </Marker>                                
         );        
       })}    
