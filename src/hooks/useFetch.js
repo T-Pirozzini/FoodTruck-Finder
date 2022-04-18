@@ -8,9 +8,7 @@ export const useFetch = (url) => {
   // fetch data from url, convert response to json, update setData state
   useEffect(() => {
     // console.log("test")
-    const timeout = setTimeout(() => {
-      
-    }, 5000)
+
     if(url.length === 0){
       console.log("0")
       return

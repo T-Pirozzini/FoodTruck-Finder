@@ -13,7 +13,7 @@ export default function TruckCard(props) {
     
   return (
     <div className="main-container">
-      <div className="cards-container">
+      {/* <div className="cards-container">
         {props.pins &&
           props.pins.map((pin) => (
             <div key={pin.id} className="truck-card">
@@ -25,7 +25,7 @@ export default function TruckCard(props) {
               </p>
             </div>
           ))}
-      </div>
+      </div> */}
       <div className="filters">
         <button onClick={() => props.setUrl("http://localhost:3002/trucks")}>
           All
