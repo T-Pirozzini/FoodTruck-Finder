@@ -31,8 +31,22 @@ const pool = new Pool({
 });
 
 pool.connect();
-app.get("/hello", async (req, res) => {
+app.get("/trucks", async (req, res) => {
   pool.query("SELECT * FROM trucks", function (err, result) {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    const data = JSON.stringify(result.rows);
+    // console.log("OBJ", result.rows);
+    // console.log("JSON", data)
+    res.send(data);
+  });
+});
+
+app.get("/trucks/:keyword", async (req, res) => {
+  const keyword = req.params.keyword  
+  console.log(keyword)
+  pool.query(`SELECT * FROM trucks WHERE info LIKE '%${keyword}%';`, function (err, result) {
     if (err) {
       return console.error("error running query", err);
     }
