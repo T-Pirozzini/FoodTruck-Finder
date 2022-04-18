@@ -9,13 +9,13 @@ import TruckCard from "./components/TruckCard";
 import Nav from "./components/Nav";
 
 function  App() {
-  const [url, setUrl1] = React.useState("http://localhost:3002/hello");
+  const [url, setUrl] = React.useState("http://localhost:3002/hello");
   const { data: pins } = useFetch(url);
   return (
     <div className="App">
       <Nav />
 
-      <TruckCard pins={pins} />
+      <TruckCard pins={pins} url={url} />
       <Map pins={pins} />
     </div>
   );

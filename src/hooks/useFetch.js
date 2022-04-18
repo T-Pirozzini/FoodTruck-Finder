@@ -7,7 +7,7 @@ export const useFetch = (url) => {
 
   // fetch data from url, convert response to json, update setData state
   useEffect(() => {
-    console.log("test")
+    // console.log("test")
     const timeout = setTimeout(() => {
       
     }, 5000)
@@ -17,16 +17,16 @@ export const useFetch = (url) => {
     }
     const fetchData = async () => {            
       const res = await fetch(url)
-      console.log("RES", res)
+      // console.log("RES", res)
       const json = await res.json()
-      console.log("JSON", json)
+      // console.log("JSON", json)
 
       setData(json)
     }
     // invoke the function
    fetchData()
 
-   console.log("test2")
+  //  console.log("test2")
   }, [url])
 
   return { data } 

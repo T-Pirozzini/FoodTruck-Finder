@@ -6,6 +6,10 @@ import { useFetch } from "../hooks/useFetch";
 import "./TruckCard.css";
 
 export default function TruckCard(props) {
+  const [url, setUrl] = React.useState(props.url);  
+  // console.log("PROPS", props)
+  // console.log("TEST", props.url + "?" + props.pins.info)
+    
   return (
     <div className="main-container">
       <div className="cards-container">
@@ -22,23 +26,23 @@ export default function TruckCard(props) {
           ))}
       </div>
       <div className="filters">
-        {/* <button onClick={() => setUrl("http://localhost:3000/foodTrucks")}>
+        <button onClick={() => setUrl(props.url + "?info=BBQ")}>
           All
         </button>
         <button
           onClick={() =>
-            setUrl("http://localhost:3000/foodTrucks?category=potato")
+            setUrl("http://localhost:3002/hello?id=4")
           }
         >
           Spuds
         </button>
         <button
           onClick={() =>
-            setUrl("http://localhost:3000/foodTrucks?category=coffee")
+            setUrl("http://localhost:3002/hello?info=BBQ")
           }
         >
           Coffee
-        </button> */}
+        </button>
       </div>
     </div>
   );
