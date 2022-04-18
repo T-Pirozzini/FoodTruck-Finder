@@ -40,20 +40,26 @@ export default function Map(props) {
   }, []);
 
   const updatePoints = (truck) => {
-    console.log("click event", truck.expand)
+    console.log("click event", truck.expand);
     // truck.expand = true
-    const newPins = [...props.pins]
-    console.log("NEW PINS", newPins)
-    newPins[truck][expand] = true
-    props.setPoints([newPins])
-    console.log("truck3", truck)
-    console.log("props.pins", props.pins)
-  }
+    // const newPins = [...props.pins]
+    // console.log("NEW PINS", newPins)
+    // newPins[truck][expand] = true
+    const array_copy = props.pins.map((element) => {
+      element.expand = false;
+      if (element.id === truck.id) {
+        element.expand = true;
+      }
+      return element;
+    });
+    props.setPoints(array_copy);
+    console.log("truck3", truck);
+    console.log("props.pins", props.pins);
+  };
 
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
-
 
   return isLoaded ? (
     <GoogleMap
@@ -89,7 +95,7 @@ export default function Map(props) {
             >
               <div key={truck.id} className="truck-card">
                 <h3>{truck.truck_name}</h3>
-                {expand ? (
+                {truck.expand ? (
                   <div>
                     <p>{truck.info}</p>
                     <p>{truck.rating}</p>
@@ -111,8 +117,7 @@ export default function Map(props) {
   );
 }
 
-
 // set individual pin to have a value of expand
-// when clicked on it would change the vlaue of expand property 
+// when clicked on it would change the vlaue of expand property
 // pass truck id into map and use the id to target individual expand propoerty
-// check in the render to update it 
+// check in the render to update it
