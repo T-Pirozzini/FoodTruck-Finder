@@ -22,10 +22,7 @@ function closeNav() {
       <span className="open-btn" onClick={openNav}><BsChevronDoubleLeft /> FILTER</span>         
       <div className="side-nav-icons">           
         <div className="close-btn" onClick={closeNav}><BsXLg /></div>
-        <div>
-          <FaDrumstickBite />
-        </div>
-              
+        <div><FaDrumstickBite /></div>
         <div><FaHotdog/></div>
         <div><FaCoffee /></div>
       </div>
