@@ -7,6 +7,8 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
+import SideNav from "./SideNav";
+
 //styles
 import "./Map.css";
 import { func } from "prop-types";
@@ -56,7 +58,7 @@ export default function Map(props) {
     setMap(null);
   }, []);
 
-  return isLoaded ? (
+  return isLoaded ? (        
     <GoogleMap
       id="map"
       mapContainerStyle={containerStyle}
@@ -65,6 +67,7 @@ export default function Map(props) {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
+      <SideNav />
       {props.pins.map((truck) => {
         return (
           <Marker
