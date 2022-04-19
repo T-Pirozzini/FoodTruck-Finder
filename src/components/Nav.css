@@ -1,6 +1,6 @@
 .nav-container {
   display: flex;
-  background-color: #1646a7;
+  background-color: blue;
   justify-content: space-between; 
   align-items: center;  
   padding: 20px;

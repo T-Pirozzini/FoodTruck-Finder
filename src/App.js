@@ -1,4 +1,4 @@
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useEffect } from "react";
 import { useFetch } from "./hooks/useFetch";
 //styles
@@ -7,6 +7,10 @@ import "./App.css";
 import Map from "./components/Map";
 import TruckCard from "./components/TruckCard";
 import Nav from "./components/Nav";
+
+//pages
+import Login from './pages/login/Login'
+import Signup from './pages/signup/Signup'
 
 function  App() {
   const [url, setUrl] = React.useState("http://localhost:3002/trucks");
@@ -23,10 +27,18 @@ function  App() {
   
   return (
     <div className="App">
-      <Nav />
+      <BrowserRouter>
+        <Nav />
+        <Routes>
+          <Route exact path="/" element={<Map pins={points} setPoints={setPoints} />}/>
+          <Route path="/signup" element={<Signup /> }/>          
+          <Route path="/login" element={<Login /> }/>                      
+        </Routes>
+      </BrowserRouter>
+      
 
       {/* <TruckCard pins={pins} url={url} setUrl={setUrl} /> */}
-      <Map pins={points} setPoints={setPoints} />
+      
     </div>
   );
 }
