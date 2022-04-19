@@ -2,6 +2,8 @@
 import './SideNav.css'
 import React from 'react'
 
+import { FaDrumstickBite, FaCoffee, FaHotdog } from "react-icons/fa";
+import { BsXLg, BsChevronDoubleLeft } from "react-icons/bs"; 
 
 export default function SideNav() {
 
@@ -17,14 +19,15 @@ function closeNav() {
 
   return (
     <div className="side-nav-container">
-      <span className="open-btn" onClick={openNav}>OPEN FILTER</span>         
+      <span className="open-btn" onClick={openNav}><BsChevronDoubleLeft /> FILTER</span>         
       <div className="side-nav-icons">           
-        <div className="close-btn" onClick={closeNav}>Close</div>
+        <div className="close-btn" onClick={closeNav}><BsXLg /></div>
         <div>
-          TACOS
-        </div>      
-        <div>BURGERS</div>
-        <div>COFFEE</div>
+          <FaDrumstickBite />
+        </div>
+              
+        <div><FaHotdog/></div>
+        <div><FaCoffee /></div>
       </div>
       
     </div>    
