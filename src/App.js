@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import { useFetch } from "./hooks/useFetch";
 //styles
 import "./App.css";
+
 //components
 import Map from "./components/Map";
 import TruckCard from "./components/TruckCard";
 import Nav from "./components/Nav";
+// import Login from "./components/Login";
 
 //pages
 import Login from './pages/login/Login'
@@ -24,9 +26,12 @@ function  App() {
     setPoints(pins)
   }, [pins])
 
+
+
   
   return (
     <div className="App">
+
       <BrowserRouter>
         <Nav />
         <Routes>
@@ -35,6 +40,7 @@ function  App() {
           <Route path="/login" element={<Login /> }/>                      
         </Routes>
       </BrowserRouter>
+
       
 
       {/* <TruckCard pins={pins} url={url} setUrl={setUrl} /> */}
