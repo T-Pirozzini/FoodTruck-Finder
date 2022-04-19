@@ -71,10 +71,10 @@ export default function Map(props) {
             id="marker"
             key={truck.id}
             position={{ lat: truck.location_lat, lng: truck.location_lng }}
-            // icon={{
-            //   url: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650255958~hmac=1c61d787f70a8787e2096192d950139b",
-            //   scaledSize: new window.google.maps.Size(42, 42)
-            // }}
+            icon={{
+              url: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650331318~hmac=d58f67861ecf5073ba3853c53c843bd7",
+              scaledSize: new window.google.maps.Size(42, 42)
+            }}
             title={"truck.truck_name"}
             // onClick={this.handleClick()}
             onClick={() => {updatePoints(truck)}}
@@ -112,7 +112,3 @@ export default function Map(props) {
   );
 }
 
-// set individual pin to have a value of expand
-// when clicked on it would change the vlaue of expand property
-// pass truck id into map and use the id to target individual expand propoerty
-// check in the render to update it
