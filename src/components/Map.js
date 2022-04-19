@@ -40,21 +40,16 @@ export default function Map(props) {
   }, []);
 
   const updatePoints = (truck) => {
-    console.log("click event", truck.expand);
-    // truck.expand = true
-    // const newPins = [...props.pins]
-    // console.log("NEW PINS", newPins)
-    // newPins[truck][expand] = true
-    const array_copy = props.pins.map((element) => {
-      element.expand = false;
-      if (element.id === truck.id) {
+    const array_copy = props.pins.map((element) => {      
+      if (element.id === truck.id && element.expand === false) {
         element.expand = true;
+      } else {      
+        element.expand = false;
       }
-      return element;
-    });
+      return element; 
+      }   
+    );
     props.setPoints(array_copy);
-    console.log("truck3", truck);
-    console.log("props.pins", props.pins);
   };
 
   const onUnmount = React.useCallback(function callback(map) {
