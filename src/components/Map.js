@@ -72,7 +72,7 @@ export default function Map(props) {
             key={truck.id}
             position={{ lat: truck.location_lat, lng: truck.location_lng }}
             icon={{
-              url: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650331318~hmac=d58f67861ecf5073ba3853c53c843bd7",
+              url: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650338871~hmac=3225041d788bd32487c780d564d05aba",
               scaledSize: new window.google.maps.Size(42, 42)
             }}
             title={"truck.truck_name"}
