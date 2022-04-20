@@ -3,3 +3,13 @@
   text-align: center;
   color: whitesmoke;  
 }
+
+a, .link{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover, .link:hover {
+  color:coral;
+  cursor: pointer;
+}
