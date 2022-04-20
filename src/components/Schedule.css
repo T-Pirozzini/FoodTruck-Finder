@@ -3,3 +3,20 @@
   justify-content: center;  
 }
 
+.MuiPagination-ul {
+  /* color: white; */
+}
+
+.MuiPagination-root {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.356);
+  border-radius: 15px;
+}
+
+.MuiPagination-root.Mui-selected {
+  background-color: white;
+}
+
+.MuiPaginationItem-root {
+  background-color: white;
+}

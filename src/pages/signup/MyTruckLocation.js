@@ -2,6 +2,8 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import SignUpATruck from './SignUpATruck';
 
+import styles from "./Signup.module.css"
+
 const containerStyle = {
   height: "90vh"
 };
@@ -18,7 +20,9 @@ function MyTruckLocationMap() {
   })
 
   const [map, setMap] = React.useState(null)
-  const [cords,setCords] = React.useState({})
+  const [cords,setCords] = React.useState({ 
+    lat: 53.5461,
+    lng: -113.4938})
 
   const onLoad = React.useCallback(function callback(map) {
     // const bounds = new window.google.maps.LatLngBounds();
@@ -31,7 +35,7 @@ function MyTruckLocationMap() {
   }, [])
 
   return isLoaded ? (
-    <>
+    <>  
       <SignUpATruck cords={cords} />
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -41,11 +45,15 @@ function MyTruckLocationMap() {
         onUnmount={onUnmount}
         onClick={((e) => {setCords({lat:e.latLng.lat(), lng:e.latLng.lng()})})}
       >
-      <Marker position={cords}/>
-        <></>
-      </GoogleMap>
-      </>
-  ) : <></>
+      <Marker position={cords}/>                
+      </GoogleMap>    
+      
+    <></>
+    </>
+    
+  ) : ( 
+    <></>
+  );
 }
 
 export default React.memo(MyTruckLocationMap)

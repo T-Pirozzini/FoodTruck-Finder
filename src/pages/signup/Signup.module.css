@@ -1,4 +1,4 @@
-.login-form {
+/* .login-form {
   max-width: 360px;
   margin: 60px auto;
   padding: 20px;
@@ -16,4 +16,21 @@
   font-size: 1em;
   color: #777;
   width: 100%;
+} */
+.registration-form{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  width: 50%
 }
+.test-container {
+  text-align: right;
+}
+
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  margin: 10px;
+}
+
