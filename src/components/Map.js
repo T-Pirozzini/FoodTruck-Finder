@@ -8,6 +8,7 @@ import {
 } from "@react-google-maps/api";
 
 import SideNav from "./SideNav";
+import Schedule from "./Schedule";
 
 //styles
 import "./Map.css";
@@ -68,6 +69,7 @@ export default function Map(props) {
       onUnmount={onUnmount}
     >
       <SideNav setUrl={props.setUrl} />
+      
       {props.pins.map((truck) => {
         return (
           <Marker
