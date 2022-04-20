@@ -30,7 +30,7 @@ function  App() {
       <BrowserRouter>
         <Nav />              
         <Routes>
-          <Route exact path="/" element={<Map pins={points} setPoints={setPoints} />}/>
+          <Route exact path="/" element={<Map pins={points} setPoints={setPoints} setUrl={setUrl} />}/>
           <Route path="/signup" element={<MyTruckLocation/> }/>          
           <Route path="/login" element={<Login /> }/>                      
         </Routes>

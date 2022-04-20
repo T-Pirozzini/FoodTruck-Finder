@@ -67,7 +67,7 @@ export default function Map(props) {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      <SideNav />
+      <SideNav setUrl={props.setUrl} />
       {props.pins.map((truck) => {
         return (
           <Marker

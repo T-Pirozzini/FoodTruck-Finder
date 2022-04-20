@@ -37,8 +37,11 @@ export default function SignUpATruck(props) {
         />        
       </label>
 
+
+
       <label>
         <span>Info:</span>
+      
         <input 
        onChange={(e) => setInfo(e.target.value)} 
         value={info}
