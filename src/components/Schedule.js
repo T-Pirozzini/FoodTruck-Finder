@@ -17,7 +17,7 @@ export default function Schedule() {
     <div className="schedule">          
       <Stack spacing={1}>
         <Typography>{day}</Typography>         
-        <Pagination count={7} value={day} onChange={ handleChange } variant="outlined" color="primary" />      
+        <Pagination count={7} value={day} onChange={ handleChange } size='medium' variant="text" color="primary" />      
       </Stack>          
     </div>    
   )

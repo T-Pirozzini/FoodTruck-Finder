@@ -4,6 +4,7 @@ import { useState } from 'react'
 import {Select, InputLabel, FormControl, MenuItem} from '@mui/material';
 
 
+
 export default function SignUpATruck(props) {
   const [name, setName] = useState('')
   const [info, setInfo] = useState('')
@@ -26,8 +27,8 @@ export default function SignUpATruck(props) {
     })
   }
 
-  return (
-    <form onSubmit={handleSubmit}  className={styles['login-form']}>
+  return (    
+    <form onSubmit={handleSubmit}  className="registration-form">
       <h2>Register Your FoodTruck</h2>
       <label>
         <span>Name:</span>
@@ -63,9 +64,9 @@ export default function SignUpATruck(props) {
         <span>Longitude:</span>
         {props.cords.lng}
       </label>
-      <button className="btn" type="submit">Submit</button>
+      <button className="submit-btn" type="submit">Submit</button>
 
       
-    </form>    
+    </form>        
   )
 }
