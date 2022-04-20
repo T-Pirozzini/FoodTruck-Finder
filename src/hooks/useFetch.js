@@ -9,8 +9,8 @@ export const useFetch = (url) => {
   useEffect(() => {
     // console.log("test")
 
-    if(url.length === 0){
-      console.log("0")
+    if(!url){
+      console.log("its broken")
       return
     }
     const fetchData = async () => {            
