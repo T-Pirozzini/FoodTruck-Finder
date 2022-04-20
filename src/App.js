@@ -20,7 +20,7 @@ function  App() {
   const { data: pins } = useFetch(url);
   
   useEffect(()=> {
-    console.log("pins",pins)
+    // console.log("pins",pins)
     pins.map((pin) => pin.expand = false)
     setPoints(pins)
   }, [pins])
