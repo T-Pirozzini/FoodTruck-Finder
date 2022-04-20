@@ -41,7 +41,7 @@ function MyTruckLocationMap() {
         onUnmount={onUnmount}
         onClick={((e) => {setCords({lat:e.latLng.lat(), lng:e.latLng.lng()})})}
       >
-        <Marker position={cords}/>
+      <Marker position={cords}/>
         <></>
       </GoogleMap>
       </>

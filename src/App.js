@@ -7,7 +7,7 @@ import "./App.css";
 
 //components
 import Map from "./components/Map";
-import TruckCard from "./components/TruckCard";
+
 import Nav from "./components/Nav";
 
 //pages
@@ -35,7 +35,7 @@ function  App() {
           <Route path="/login" element={<Login /> }/>                      
         </Routes>
       </BrowserRouter>     
-      {/* <TruckCard pins={pins} url={url} setUrl={setUrl} /> */}       
+   
     </div>
   );
 }

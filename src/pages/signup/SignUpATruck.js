@@ -1,6 +1,7 @@
 import styles from './Signup.module.css'
 import { useState } from 'react'
 // import MyTruckLocationMap from "./MyTruckLocation"
+import {Select, InputLabel, FormControl, MenuItem} from '@mui/material';
 
 
 export default function SignUpATruck(props) {
@@ -35,17 +36,23 @@ export default function SignUpATruck(props) {
         onChange={(e) => setName(e.target.value)}
         value={name} 
         />        
-      </label>
-
-
+      </label>      
+      
+      <FormControl fullWidth >
+        <InputLabel>Info:</InputLabel>
+        <Select          
+          id="info-items"
+          value={info}          
+          onChange={(e) => setInfo(e.target.value)}                 
+        >
+          <MenuItem value={"coffee"}>Coffee</MenuItem>
+          <MenuItem value={"potato"}>Potato</MenuItem>
+          <MenuItem value={"bbq"}>BBQ</MenuItem>
+        </Select>
+      </FormControl>
 
       <label>
-        <span>Info:</span>
-      
-        <input 
-       onChange={(e) => setInfo(e.target.value)} 
-        value={info}
-        /> 
+       
       </label>
       <label>
         <span>Latitude:</span>
