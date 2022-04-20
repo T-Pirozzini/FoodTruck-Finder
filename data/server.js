@@ -13,6 +13,8 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.urlencoded({extended:true}))
+app.use(express.json({extended:true}))
 
 // con setting
 const pg = require("pg");
@@ -31,6 +33,8 @@ const pool = new Pool({
 });
 
 pool.connect();
+
+// Get Requests
 app.get("/trucks", async (req, res) => {
   pool.query("SELECT * FROM trucks", function (err, result) {
     if (err) {
@@ -57,9 +61,22 @@ app.get("/trucks/:keyword", async (req, res) => {
   });
 });
 
-app.get("/hi", (req, res) => {
-  res.json(test);
-});
+//Post Requests
+app.post("/signup", async (req, res) => {
+  console.log("req.body",req.body)
+  pool.query(
+    `INSERT INTO trucks (truck_name, info, rating, location_lat, location_lng) VALUES (($1), ($2), ($3), ($4), ($5));`,[req.body.name, req.body.info, 5, req.body.lat, req.body.lng], function (err, result) {
+    if (err) {
+      console.log("req.body",req.body)
+      return console.error("error running query", err);
+    }
+    // console.log("req.body",req.body)
+    // const data = JSON.stringify(result.rows);
+    // // console.log("OBJ", result.rows);
+    // // console.log("JSON", data)
+    res.json({property_message:"Truck is saved! Start Cooking!"});
+  });
+})
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

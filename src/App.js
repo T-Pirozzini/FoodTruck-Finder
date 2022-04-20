@@ -12,7 +12,7 @@ import Nav from "./components/Nav";
 
 //pages
 import Login from './pages/login/Login'
-import Registration from './pages/signup/Registration'
+import MyTruckLocation from './pages/signup/MyTruckLocation'
 
 function  App() {
   const [url, setUrl] = React.useState("http://localhost:3002/trucks");
@@ -36,7 +36,7 @@ function  App() {
         <Nav />
         <Routes>
           <Route exact path="/" element={<Map pins={points} setPoints={setPoints} />}/>
-          <Route path="/signup" element={<Registration/> }/>          
+          <Route path="/signup" element={<MyTruckLocation/> }/>          
           <Route path="/login" element={<Login /> }/>                      
         </Routes>
       </BrowserRouter>
