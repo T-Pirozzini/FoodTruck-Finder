@@ -57,9 +57,7 @@ export default function Map(props) {
                   // id="marker"
                   key={truck.id}
                   position={[truck.location_lat, truck.location_lng ]}
-                  // icon={{
-                  //     iconUrl: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650338871~hmac=3225041d788bd32487c780d564d05aba"                      
-                  //   }}
+                  
                   //   title={"truck.truck_name"}
                     // onClick={this.handleClick()}
                     // onClick={(e) => console.log("clicked",e)}
@@ -88,12 +86,7 @@ export default function Map(props) {
                     </Popup>
                       </Marker>
                     );
-                  })}
-        {/* <Marker position={[53.496, -113.5]}>
-           <Popup>
-          //   A pretty CSS3 popup. <br /> Easily customizable.
-          // </Popup>
-        </Marker> */}       
+                  })}              
       </MapContainer>
       <SideNav setUrl={props.setUrl} />
       </>
