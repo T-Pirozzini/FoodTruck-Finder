@@ -47,6 +47,22 @@ app.get("/trucks", async (req, res) => {
   });
 });
 
+// Day of the week filter request
+app.get("/trucks/:day", async (req, res) => {
+  const keyword = req.params.keyword  
+  console.log(keyword)
+  pool.query(`SELECT * FROM trucks WHERE day LIKE '%${keyword}%';`, function (err, result) {
+    if (err) {
+      return console.error("error running query", err);
+    }
+    const data = JSON.stringify(result.rows);
+    // console.log("OBJ", result.rows);
+    // console.log("JSON", data)
+    res.send(data);
+  });
+});
+
+// Food Type Filter Request
 app.get("/trucks/:keyword", async (req, res) => {
   const keyword = req.params.keyword  
   console.log(keyword)

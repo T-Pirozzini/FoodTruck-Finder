@@ -6,14 +6,14 @@ import Schedule from './Schedule';
 // styles
 import './Nav.css'
 
-export default function Nav() {
+export default function Nav(props) {
   return (
     
     <div className="nav-container">      
       <div className="nav-title">
         <h2><Link to="/">FoodTruck Finder</Link></h2>
       </div>
-      <Schedule />
+      <Schedule setUrl={props.setUrl}/>
       <div className="nav-items">      
         <div className="link">Favourites</div>
 

@@ -20,6 +20,7 @@ const truckIcon = new L.Icon({
   // shadowAnchor: [20, 92]
 });
 
+
 export default function Map(props) {
   const [expand, setExpand] = useState(false);
                 
@@ -40,10 +41,12 @@ export default function Map(props) {
   return (
     <>
     <MapContainer center={[53.5456, -113.4903]} zoom={13} scrollWheelZoom={true}>
+        
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />        
+          attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`"
+);'
+          url={"https://api.mapbox.com/styles/v1/tpirozzini/cl29e9qcl000115n0dxc7a0i7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHBpcm96emluaSIsImEiOiJjbDI5ZTVnbXAwZnUzM2tydGF6aW5xaHR3In0.tSzKVLnd-wE5MYRZ9Qfbhw"}
+          />
           {props.pins.map((truck) => {
             return (
                 <Marker
