@@ -1,4 +1,4 @@
-import styles from './Signup.module.css'
+import './Signup.css'
 import { useState } from 'react'
 // import MyTruckLocationMap from "./MyTruckLocation"
 import {Select, InputLabel, FormControl, MenuItem} from '@mui/material';
@@ -27,9 +27,9 @@ export default function SignUpATruck(props) {
 
   return (    
     <form  onSubmit={handleSubmit} className="registration-form">
-      <h2>Register Your FoodTruck</h2>
-      <label>
-        <span>Name:</span>
+      <h2 className='registration-components'>Register Your FoodTruck</h2>
+      <label className='registration-components'>
+        <span>Name of truck:</span>
         <input 
         // type="email"
         onChange={(e) => setName(e.target.value)}
@@ -38,7 +38,7 @@ export default function SignUpATruck(props) {
       </label>      
       
       {/* Drop Down Info */}
-      <FormControl fullWidth >
+      <FormControl fullWidth  className='registration-components'>
         <InputLabel>Info:</InputLabel>
         <Select          
           id="info-items"
@@ -51,11 +51,11 @@ export default function SignUpATruck(props) {
         </Select>
       </FormControl>
       
-      <label>
+      <label className='registration-components'>
         <span>Latitude:</span>
         {props.cords[0]}
       </label>
-      <label>
+      <label className='registration-components'>
         <span>Longitude:</span>
         {props.cords[1]}
       </label>
