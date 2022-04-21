@@ -1,20 +1,17 @@
 import React from "react";
 import { useState } from "react";
-
 import { MapContainer, TileLayer, useMap, Marker, Tooltip, Popup } from 'react-leaflet'
 import L from 'leaflet';
-
-
 import SideNav from "./SideNav";
 import Schedule from "./Schedule";
 
 //styles
 import "./Map.css";
-// import { func } from "prop-types";
+
 import 'leaflet/dist/leaflet.css';
 
 const truckIcon = new L.Icon({
-  iconUrl: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650510932~hmac=9bb9406da449bd57dffea26b0071cb39",
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
   // iconRetinaUrl: require("../assets/pointerIcon.svg"),  
   popupAnchor: [1, -1],
   iconSize: [55, 55],
@@ -39,9 +36,6 @@ export default function Map(props) {
     );
     props.setPoints(array_copy);
   };
-
- 
-
   
   return (
     <>
@@ -52,15 +46,9 @@ export default function Map(props) {
           />        
           {props.pins.map((truck) => {
             return (
-              
                 <Marker
-                  // id="marker"
                   key={truck.id}
-                  position={[truck.location_lat, truck.location_lng ]}
-                  
-                  //   title={"truck.truck_name"}
-                    // onClick={this.handleClick()}
-                    // onClick={(e) => console.log("clicked",e)}
+                  position={[truck.location_lat, truck.location_lng ]}            
                     icon={ truckIcon }
                     eventHandlers={{
                       click: (e) => {
@@ -70,8 +58,7 @@ export default function Map(props) {
                   >                                        
                     <Tooltip direction="right" offset={[20, 5]} permanent>
                       {truck.truck_name}
-                    </Tooltip>                    
-                    
+                    </Tooltip> 
                     <Popup>
                     <h3>{truck.truck_name}</h3>
                            
@@ -93,61 +80,3 @@ export default function Map(props) {
 
 )}
 
-//   return isLoaded ? (        
-  //     <GoogleMap
-  //       id="map"
-  //       mapContainerStyle={containerStyle}
-  //       center={center}
-  //       zoom={13}
-  //       onLoad={onLoad}
-  //       onUnmount={onUnmount}
-  //     >
-  //       <SideNav setUrl={props.setUrl} />
-  
-  //       {props.pins.map((truck) => {
-    //         return (
-      //           <Marker
-      //             id="marker"
-      //             key={truck.id}
-      //             position={{ lat: truck.location_lat, lng: truck.location_lng }}
-      //             icon={{
-        //               url: "https://cdn-icons.flaticon.com/png/128/499/premium/499552.png?token=exp=1650338871~hmac=3225041d788bd32487c780d564d05aba",
-        //               scaledSize: new window.google.maps.Size(42, 42)
-        //             }}
-        //             title={"truck.truck_name"}
-        //             // onClick={this.handleClick()}
-        //             onClick={() => {updatePoints(truck)}}
-        //           >
-        //             <InfoWindow
-        //               id="info-window"
-        //               key={truck.id}
-        //               position={{
-          //                 lat: truck.location_lat + 0.002,
-          //                 lng: truck.location_lng + -0.0008,
-          //               }}
-          //               // onCloseClick={() => setInfoWindowVisible(false)}
-          //             >
-          //               <div key={truck.id} className="truck-card">
-          //                 <h3>{truck.truck_name}</h3>
-          //                 {truck.expand ? (
-            //                   <div>
-            //                     <p>{truck.info}</p>
-            //                     <p>{truck.rating}</p>
-            //                     <p>
-            //                       {truck.location_lng}, {truck.location_lat}
-            //                     </p>
-            //                   </div>
-            //                 ) : null}
-            //               </div>
-            //             </InfoWindow>
-            //           </Marker>
-            //         );
-            //       })}
-            
-            //       <></>
-            //     </GoogleMap>
-            //   ) : (
-              //     <></>
-              //   );
-              // }
-              

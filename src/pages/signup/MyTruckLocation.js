@@ -1,59 +1,59 @@
-import React from 'react'
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import React, { useState, useEffect } from 'react'
+
+// components
 import SignUpATruck from './SignUpATruck';
 
+// Leaflet API
+import { MapContainer, TileLayer, useMap, Marker, Tooltip, Popup, useMapEvents } from 'react-leaflet'
+import L from 'leaflet';
+
+// styles
 import styles from "./Signup.module.css"
+import 'leaflet/dist/leaflet.css';
 
-const containerStyle = {
-  height: "90vh"
-};
 
-const center = {
-  lat: 53.5461,
-  lng: -113.4938
-};
+const truckIcon = new L.Icon({
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",  
+  iconSize: [30, 30],  
+});
 
-function MyTruckLocationMap() {
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_MAP_KEY
-  })
+export default function MyTruckLocationMap() {
+  const [cords, setCords] = useState([53.5456, -113.4903])   
+  const LocationMarker = () => {  
+    const map = useMapEvents({
+      click: (e) => {      
+        const { lat, lng } = e.latlng;        
+        setCords([lat,lng])        
+      }
+    });
+    return null;
+  }
 
-  const [map, setMap] = React.useState(null)
-  const [cords,setCords] = React.useState({ 
-    lat: 53.5461,
-    lng: -113.4938})
-
-  const onLoad = React.useCallback(function callback(mapInstance) {
-    // const bounds = new window.google.maps.LatLngBounds();
-    // map.fitBounds(bounds);
-
-    console.log("ONLOAD", mapInstance)
-    setMap(mapInstance)
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(mapInstance) {
-    setMap(null)
-  }, [])
-
-  return isLoaded ? (
+  return (
     <>
-      <SignUpATruck cords={cords} />
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-        onClick={((e) => {setCords({lat:e.latLng.lat(), lng:e.latLng.lng()})})}
+    <>    
+    <SignUpATruck cords={cords} />
+      <MapContainer 
+        center={[53.5456, -113.4903]} 
+        zoom={13} 
+        scrollWheelZoom={true}          
       >
-        {/* {console.log("BEFORE: MARKER-LOCATION", cords)} */}
-        {map?.renderingType === "RASTER" && <Marker key={8} position={cords}/>}
-        {console.log("AFTER: MARKER-LOCATION", cords)}
-        <></>        
-      </GoogleMap>
-      </>
-  ) : <></>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"         
+          />        
+        <Marker
+        position={cords}
+        icon={ truckIcon }       
+        >          
+        </Marker> 
+        <LocationMarker />       
+      </MapContainer>
+    </>
+    </>
+  )
 }
 
-export default React.memo(MyTruckLocationMap)
+
+
+

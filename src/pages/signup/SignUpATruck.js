@@ -3,8 +3,6 @@ import { useState } from 'react'
 // import MyTruckLocationMap from "./MyTruckLocation"
 import {Select, InputLabel, FormControl, MenuItem} from '@mui/material';
 
-
-
 export default function SignUpATruck(props) {
   const [name, setName] = useState('')
   const [info, setInfo] = useState('')
@@ -12,8 +10,8 @@ export default function SignUpATruck(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("name", name)
-    const lat = props.cords.lat
-    const lng = props.cords.lng
+    const lat = props.cords[0]
+    const lng = props.cords[1]
     const rating = 5
     const attributes = {name, info, rating , lat, lng}
 
@@ -28,7 +26,7 @@ export default function SignUpATruck(props) {
   }
 
   return (    
-    <form onSubmit={handleSubmit}  className="registration-form">
+    <form  onSubmit={handleSubmit} className="registration-form">
       <h2>Register Your FoodTruck</h2>
       <label>
         <span>Name:</span>
@@ -39,6 +37,7 @@ export default function SignUpATruck(props) {
         />        
       </label>      
       
+      {/* Drop Down Info */}
       <FormControl fullWidth >
         <InputLabel>Info:</InputLabel>
         <Select          
@@ -51,22 +50,16 @@ export default function SignUpATruck(props) {
           <MenuItem value={"bbq"}>BBQ</MenuItem>
         </Select>
       </FormControl>
-
-      <label>
-       
-      </label>
+      
       <label>
         <span>Latitude:</span>
-        {props.cords.lat}
-
+        {props.cords[0]}
       </label>
       <label>
         <span>Longitude:</span>
-        {props.cords.lng}
+        {props.cords[1]}
       </label>
-      <button className="submit-btn" type="submit">Submit</button>
-
-      
+      <button className="submit-btn" type="submit">Submit</button>      
     </form>        
   )
 }
