@@ -9,26 +9,26 @@ export default function SignUpATruck(props) {
   const [name, setName] = useState('')
   const [info, setInfo] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("name", name)
-    const lat = props.cords.lat
-    const lng = props.cords.lng
-    const rating = 5
-    const attributes = {name, info, rating , lat, lng}
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   console.log("name", name)
+  //   const lat = props.cords.lat
+  //   const lng = props.cords.lng
+  //   const rating = 5
+  //   const attributes = {name, info, rating , lat, lng}
 
-    fetch("http://localhost:3002/signup",{
-      method:"POST",
-      headers: {"Content-Type": "application/json" },
-      body: JSON.stringify(attributes)
+  //   fetch("http://localhost:3002/signup",{
+  //     method:"POST",
+  //     headers: {"Content-Type": "application/json" },
+  //     body: JSON.stringify(attributes)
     
-    }).then(() => {
-      console.log("Truck Registered");
-    })
-  }
+  //   }).then(() => {
+  //     console.log("Truck Registered");
+  //   })
+  // }
 
   return (    
-    <form onSubmit={handleSubmit}  className="registration-form">
+    <form   className="registration-form">
       <h2>Register Your FoodTruck</h2>
       <label>
         <span>Name:</span>
@@ -57,12 +57,12 @@ export default function SignUpATruck(props) {
       </label>
       <label>
         <span>Latitude:</span>
-        {props.cords.lat}
+        {/* {props.cords.lat} */}
 
       </label>
       <label>
         <span>Longitude:</span>
-        {props.cords.lng}
+        {/* {props.cords.lng} */}
       </label>
       <button className="submit-btn" type="submit">Submit</button>
 

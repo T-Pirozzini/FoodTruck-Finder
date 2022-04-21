@@ -4,7 +4,6 @@ import { useState } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Tooltip, Popup } from 'react-leaflet'
 import L from 'leaflet';
 
-
 import SideNav from "./SideNav";
 import Schedule from "./Schedule";
 
@@ -39,9 +38,6 @@ export default function Map(props) {
     );
     props.setPoints(array_copy);
   };
-
- 
-
   
   return (
     <>
