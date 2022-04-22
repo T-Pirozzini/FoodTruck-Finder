@@ -16,7 +16,7 @@ export default function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../../public/img/spuddy_1.jpeg"
+          src="https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/spuddy_1.jpg?raw=true"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -27,7 +27,7 @@ export default function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../public/img/spuddy_2.jpeg"
+          src="https://raw.githubusercontent.com/T-Pirozzini/LHLFinals-FoodTruckApp/main/src/assets/sweet_tooth_2.avif"
           alt="Second slide"
         />
 
@@ -39,7 +39,7 @@ export default function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../assets/spuddy_3.jpeg"
+          src="https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/sweet_tooth_2.jpg?raw=true"
           alt="Third slide"
         />
 
