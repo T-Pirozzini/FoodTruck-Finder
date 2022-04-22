@@ -4,6 +4,8 @@ import { MapContainer, TileLayer, useMap, Marker, Tooltip, Popup } from 'react-l
 import L from 'leaflet';
 import SideNav from "./SideNav";
 import Schedule from "./Schedule";
+import ControlledCarousel from "./Carousel"
+
 
 //styles
 import "./Map.css";
@@ -63,10 +65,12 @@ export default function Map(props) {
                       {truck.truck_name}
                     </Tooltip> 
                     <Popup>
+                    
                     <h3>{truck.truck_name}</h3>
                       
                       <div className="image-container">
-                        <img></img>
+                        <ControlledCarousel />
+                        
                       </div>
                                <div>
                                  <p>{truck.info}</p>
