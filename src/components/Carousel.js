@@ -16,7 +16,7 @@ export default function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://food.fnr.sndimg.com/content/dam/images/food/products/2022/3/11/rx_goldbelly-clinton-street-diner-zeus-burger.jpg.rend.hgtvcom.406.305.suffix/1647019464547.jpeg"
+          src="../../public/img/spuddy_1.jpeg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -27,7 +27,7 @@ export default function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://cdn.vox-cdn.com/thumbor/K-uT_aKizX7o9ejDbgeTGhwsqXY=/0x0:1638x2048/1200x800/filters:focal(681x606:943x868)/cdn.vox-cdn.com/uploads/chorus_image/image/70775626/274631072_10159235198644094_8293783282457429408_n.0.jpg"
+          src="../public/img/spuddy_2.jpeg"
           alt="Second slide"
         />
 
@@ -39,7 +39,7 @@ export default function ControlledCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://cdn.vox-cdn.com/thumbor/FtykbMy9mPZuBkf1bnA-KY57N2o=/0x0:1086x724/1200x900/filters:focal(457x276:629x448)/cdn.vox-cdn.com/uploads/chorus_image/image/70659154/DE999754_BBDC_4785_801B_FBB68346CA32_1_105_c.0.jpeg"
+          src="../assets/spuddy_3.jpeg"
           alt="Third slide"
         />
 
