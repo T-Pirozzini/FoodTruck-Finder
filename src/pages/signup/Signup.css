@@ -62,3 +62,16 @@
   width: 300px;
   margin-bottom: 50px;
 }
+
+.signup-btn .MuiButton-root {
+  background-color:rgb(25, 206, 185);
+}
+
+.lat-long-container {
+
+}
+
+table, th, td {
+  border: 2px solid blue;
+  padding: 10px;
+}
