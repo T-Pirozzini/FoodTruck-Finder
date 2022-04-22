@@ -16,7 +16,6 @@ export default function Nav(props) {
       <Schedule setUrl={props.setUrl}/>
       <div className="nav-items">      
         <div className="link">Favourites</div>
-
         <div><Link to="/signup">Signup</Link></div>
         <div><Link to="/login">Login</Link></div>
 
