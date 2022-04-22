@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react'
 // components
 import SignUpATruck from './SignUpATruck';
 
+// MUI components
+import { Pagination, Typography, Stack } from '@mui/material';
+
 // Leaflet API
 import { MapContainer, TileLayer, useMap, Marker, Tooltip, Popup, useMapEvents } from 'react-leaflet'
 import L from 'leaflet';
@@ -17,18 +20,41 @@ const truckIcon = new L.Icon({
   iconSize: [30, 30],  
 });
 
+
+let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+
+
 export default function MyTruckLocationMap() {
-  const [cords, setCords] = useState([53.5456, -113.4903])   
+  const [cords, setCords] = useState([53.5456, -113.4903]) 
+  const [location, setLocation] = useState("monday")  
+  const [valueInt, setValueInt] = useState(1)
+  const [dayLocation, setDayLocation] = useState({1:{},2:{},3:{},4:{},5:{},6:{}, 7:{}})
+  console.log("DAYLOCATION:", dayLocation)
+  let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+
+const updateDay = ((e, value) =>
+ {
+  console.log("currentDay", value)
+  console.log("Day of Week:", week[value])
+  setLocation(week[value])
+  setValueInt(value)
+ })
+  
+  
   const LocationMarker = () => {  
     const map = useMapEvents({
       click: (e) => {      
-        const { lat, lng } = e.latlng;        
-        setCords([lat,lng])        
+        const { lat, lng } = e.latlng;
+        console.log("value:", valueInt)
+        // setCords([lat,lng])
+        console.log("cords", cords)  
+        // dayLocation[valueInt - 1] = [lat,lng]
+        setDayLocation({...dayLocation, [valueInt]:{lat,lng}})                    
       }
     });
-    return null;
+    return;
   }
-
+  // console.log("day array ", dayLocation)
   return (
     <>
     <div className="registration-container">  
@@ -50,7 +76,13 @@ export default function MyTruckLocationMap() {
         </Marker> 
         <LocationMarker />       
       </MapContainer>
-      <SignUpATruck cords={cords} />
+      <SignUpATruck cords={cords} dayLocation={dayLocation}/>
+      <div className="signup-schedule">
+        <Stack spacing={1}>
+          <Typography>{location.toUpperCase()}</Typography>         
+          <Pagination count={7} value={location} onChange={updateDay} size='medium' variant="outlined" color="primary" />      
+        </Stack>
+      </div>
     </div>
     </>
   )
