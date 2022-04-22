@@ -1,7 +1,16 @@
 import './Signup.css'
 import { useState } from 'react'
 // import MyTruckLocationMap from "./MyTruckLocation"
+
+// MUI Component Imports
 import {Select, InputLabel, FormControl, MenuItem} from '@mui/material';
+import { Pagination, Typography, Stack } from '@mui/material';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+
+
+// components
+
 
 export default function SignUpATruck(props) {
   const [name, setName] = useState('')
@@ -25,11 +34,13 @@ export default function SignUpATruck(props) {
     })
   }
 
-  return (    
+  return ( 
+      
     <form  onSubmit={handleSubmit} className="registration-form">
       <h2 className='registration-components'>Register Your FoodTruck</h2>
-      <label className='registration-components'>
-        <span>Name of truck:</span>
+      <label className='registration-components name-of-truck'>
+        <span>Name of you're truck:</span>
+        
         <input 
         // type="email"
         onChange={(e) => setName(e.target.value)}
@@ -50,6 +61,13 @@ export default function SignUpATruck(props) {
           <MenuItem value={"bbq"}>BBQ</MenuItem>
         </Select>
       </FormControl>
+
+      <div className="signup-schedule">
+        <Stack spacing={1}>
+          <Typography>SCHEDULE</Typography>         
+          <Pagination count={7} size='small' variant="text" color="secondary" />      
+        </Stack>
+      </div>  
       
       <label className='registration-components'>
         <span>Latitude:</span>
@@ -59,7 +77,16 @@ export default function SignUpATruck(props) {
         <span>Longitude:</span>
         {props.cords[1]}
       </label>
-      <button className="submit-btn" type="submit">Submit</button>      
-    </form>        
+
+      {/* Submit Button */}
+      <div className="signup-sched"> 
+        <Stack direction="row" spacing={2}>       
+          <Button className="submit-btn" type="submit" variant="contained" endIcon={<SendIcon />}>Submit</Button>
+        </Stack>
+      </div> 
+
+      {/* <button className="submit-btn" type="submit">Submit</button>       */}
+    </form>
+             
   )
 }

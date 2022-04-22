@@ -7,16 +7,16 @@
   /* color: white; */
 }
 
-.MuiPagination-root {
+.schedule .MuiPagination-root {
   color: white;
   background-color: rgba(255, 255, 255, 0.356);
   border-radius: 15px;
 }
 
-.MuiPagination-root.Mui-selected {
+.schedule .MuiPagination-root.Mui-selected {
   background-color: white;
 }
 
-.MuiPaginationItem-root {
+.schedule .MuiPaginationItem-root {
   background-color: white;
 }

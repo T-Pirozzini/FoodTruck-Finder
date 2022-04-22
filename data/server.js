@@ -36,11 +36,12 @@ pool.connect();
 
 // Get Requests
 app.get("/trucks", async (req, res) => {
-  pool.query("SELECT * FROM trucks", function (err, result) {
+  pool.query("SELECT * FROM trucks JOIN locations ON locations.trucks_id = trucks.id WHERE locations.day = 'monday';", function (err, result) {
     if (err) {
       return console.error("error running query", err);
     }
     const data = JSON.stringify(result.rows);
+    
     // console.log("OBJ", result.rows);
     // console.log("JSON", data)
     res.send(data);
@@ -49,9 +50,9 @@ app.get("/trucks", async (req, res) => {
 
 // Day of the week filter request
 app.get("/trucks/:day", async (req, res) => {
-  const keyword = req.params.keyword  
-  console.log(keyword)
-  pool.query(`SELECT * FROM trucks WHERE day LIKE '%${keyword}%';`, function (err, result) {
+  const keyword = req.params.day  
+  console.log("KEYWORD", keyword)
+  pool.query(`SELECT * FROM trucks JOIN locations ON locations.trucks_id = trucks.id WHERE locations.day = '${keyword}';`, function (err, result) {
     if (err) {
       return console.error("error running query", err);
     }

@@ -42,7 +42,23 @@
   height: 81vh; 
 }
 
-.submit-btn {  
-  width: 20%;
+.signup-schedule .MuiPagination-root {  
+  background-color: rgba(119, 230, 245, 0.622);
+  padding: 10px;
+  border-radius: 5px;
 }
 
+.signup-schedule .MuiPagination-root.Mui-selected {
+  background-color: white;
+}
+
+.signup-schedule .MuiPaginationItem-root {
+  background-color: white;
+}
+
+.name-of-truck {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 50px;
+}
