@@ -25,17 +25,18 @@ let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "satu
 
 
 export default function MyTruckLocationMap() {
-  const [cords, setCords] = useState([53.5456, -113.4903]) 
+  const [cords, setCords] = useState([0,0]) 
   const [location, setLocation] = useState("monday")  
   const [valueInt, setValueInt] = useState(1)
   const [dayLocation, setDayLocation] = useState({1:{},2:{},3:{},4:{},5:{},6:{}, 7:{}})
-  console.log("DAYLOCATION:", dayLocation)
+  // console.log("DAYLOCATION:", dayLocation)
   let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
 const updateDay = ((e, value) =>
  {
-  console.log("currentDay", value)
-  console.log("Day of Week:", week[value])
+  // console.log("currentDay", value)
+  // console.log("Day of Week:", week[value])
+  setCords([0,0])
   setLocation(week[value])
   setValueInt(value)
  })
@@ -48,6 +49,7 @@ const updateDay = ((e, value) =>
         console.log("value:", valueInt)
         // setCords([lat,lng])
         console.log("cords", cords)  
+        setCords([lat, lng])
         // dayLocation[valueInt - 1] = [lat,lng]
         setDayLocation({...dayLocation, [valueInt]:{lat,lng}})                    
       }

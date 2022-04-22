@@ -19,17 +19,16 @@ export default function SignUpATruck(props) {
     console.log("name", name)
     const lat = props.cords[0]
     const lng = props.cords[1]
+    const dayLocation = props.dayLocation
     const rating = 5
-    const attributes = [
-      [name, info, rating , lat, lng],
-      [name, info, rating , lat, lng],
-      [name, info, rating , lat, lng],
-    ]
+    const attributes = {name, info, rating, lat, lng, dayLocation}
+    console.log("Fetched")
+    console.log("props", props)   
 
     fetch("http://localhost:3002/signup",{
       method:"POST",
       headers: {"Content-Type": "application/json" },
-      body: JSON.stringify(attributes)
+      body: JSON.stringify(attributes)      
     
     }).then(() => {
       console.log("Truck Registered");
