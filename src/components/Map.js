@@ -64,7 +64,10 @@ export default function Map(props) {
                     </Tooltip> 
                     <Popup>
                     <h3>{truck.truck_name}</h3>
-                           
+                      
+                      <div className="image-container">
+                        <img></img>
+                      </div>
                                <div>
                                  <p>{truck.info}</p>
                                  <p>{truck.rating}</p>
@@ -74,7 +77,7 @@ export default function Map(props) {
                                </div>
                       {truck.truck_name}
                     </Popup>
-                      </Marker>
+                  </Marker>
                     );
                   })}              
       </MapContainer>
