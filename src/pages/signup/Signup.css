@@ -1,0 +1,77 @@
+.login-form {
+  /* max-width: 360px; */
+  /* margin: 60px auto; */
+  /* padding: 20px; */
+}
+.login-form label {
+  display: block;
+  /* margin: 30px auto; */
+}
+.login-form span {
+  display: block;
+  /* margin-bottom: 6px; */
+}
+.login-form input {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+}
+
+.registration-container {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;    
+  width: 50%;
+  align-items: center;
+  /* border: 2px solid green; */
+  margin-right: 5%;  
+}
+
+.registration-components {
+  display: flex;
+  margin: 30px;
+}
+#signup-map {
+  width: 75vm; 
+  height: 81vh; 
+}
+
+.signup-schedule .MuiPagination-root {  
+  background-color: rgba(119, 230, 245, 0.622);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.signup-schedule .MuiPagination-root.Mui-selected {
+  background-color: white;
+}
+
+.signup-schedule .MuiPaginationItem-root {
+  background-color: white;
+}
+
+.name-of-truck {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+.signup-btn .MuiButton-root {
+  background-color:rgb(25, 206, 185);
+}
+
+.lat-long-container {
+
+}
+
+table, th, td {
+  border: 2px solid blue;
+  padding: 10px;
+}

@@ -13,6 +13,7 @@ import Nav from "./components/Nav";
 //pages
 import Login from './pages/login/Login'
 import MyTruckLocation from './pages/signup/MyTruckLocation'
+import 'leaflet/dist/leaflet.css';
 
 function  App() {
   const [url, setUrl] = React.useState("http://localhost:3002/trucks");
@@ -20,7 +21,7 @@ function  App() {
   const { data: pins } = useFetch(url);
   
   useEffect(()=> {
-    console.log("pins",pins)
+    // console.log("pins",pins)
     pins.map((pin) => pin.expand = false)
     setPoints(pins)
   }, [pins])
@@ -28,9 +29,9 @@ function  App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav />              
+        <Nav setUrl={setUrl} />              
         <Routes>
-          <Route exact path="/" element={<Map pins={points} setPoints={setPoints} setUrl={setUrl} />}/>
+          <Route exact path="/" element={<Map pins={pins} setPoints={setPoints} setUrl={setUrl}  />}/>
           <Route path="/signup" element={<MyTruckLocation/> }/>          
           <Route path="/login" element={<Login /> }/>                      
         </Routes>

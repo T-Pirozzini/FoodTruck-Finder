@@ -19,7 +19,7 @@ export const useFetch = (url) => {
       const json = await res.json()
       // console.log("JSON", json)
 
-      setData(json)
+      setData( json)
     }
     // invoke the function
    fetchData()
