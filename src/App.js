@@ -7,7 +7,6 @@ import "./App.css";
 
 //components
 import Map from "./components/Map";
-
 import Nav from "./components/Nav";
 
 //pages
@@ -29,7 +28,7 @@ function  App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav setUrl={setUrl} />              
+        <Nav setUrl={setUrl} />                      
         <Routes>
           <Route exact path="/" element={<Map pins={pins} setPoints={setPoints} setUrl={setUrl}  />}/>
           <Route path="/signup" element={<MyTruckLocation/> }/>          
