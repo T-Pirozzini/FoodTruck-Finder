@@ -1,4 +1,9 @@
 import React, { useState } from 'react'
+import SubmitOrder from './CardField';
+import { loadStripe } from "@stripe/stripe-js";
+import {Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import axios from "axios";
+
 
 
 const Menu = ({ items }) => {
@@ -33,10 +38,28 @@ const Menu = ({ items }) => {
             </div>
           </article>         
         )
-    
       })}
         <article className="order-total">
-          {total}
+          <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{total}</td>
+            </tr>
+          </tbody>
+          </table>          
+        </article>
+        <button>Submit Order</button>
+        <article>
+          <SubmitOrder />
         </article>       
           
     </div>     
