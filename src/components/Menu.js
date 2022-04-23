@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 
-
+import {loadStripe} from '@stripe/stripe-js';
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from '@stripe/react-stripe-js';
+import Stripe from './Stripe';
 
 
 const Menu = ({ items }) => {
@@ -14,6 +21,8 @@ const Menu = ({ items }) => {
   setTotal(price*e.target.value)
   
 }
+
+const stripePromise = loadStripe('pk_test_51KlK35DzKwWre22N3YsmHaXDhnTy33YXdcliEbDAnx7EEbFs3lCedAcj8ZZoN8hLc550S9X9H8ls9Exnq422CG1600Wyfa2aLV');
 
 // helper function to updat the total and then call this function inside of update quantity
 
@@ -52,9 +61,10 @@ const Menu = ({ items }) => {
               <td>{total}</td>
             </tr>
           </tbody>
-          </table>          
-        </article>
-        <button>Submit Order</button>               
+        </table>          
+      </article>                      
+    
+        <Stripe />
       
     </div>     
   )
