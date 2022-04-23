@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import SubmitOrder from './CardField';
-import { loadStripe } from "@stripe/stripe-js";
-import {Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import axios from "axios";
+
 
 
 
@@ -57,11 +54,8 @@ const Menu = ({ items }) => {
           </tbody>
           </table>          
         </article>
-        <button>Submit Order</button>
-        <article>
-          <SubmitOrder />
-        </article>       
-          
+        <button>Submit Order</button>               
+      
     </div>     
   )
   
@@ -73,4 +67,3 @@ export default Menu
 
 
 
-{/* <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button> */}
