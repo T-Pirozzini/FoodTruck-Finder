@@ -5,6 +5,7 @@ import L from 'leaflet';
 import SideNav from "./SideNav";
 import Schedule from "./Schedule";
 import ControlledCarousel from "./Carousel"
+import { Link } from 'react-router-dom';
 
 
 //styles
@@ -64,22 +65,13 @@ export default function Map(props) {
                     <Tooltip direction="right" offset={[20, 5]} permanent>
                       {truck.truck_name}
                     </Tooltip> 
-                    <Popup>
-                    
-                    <h3>{truck.truck_name}</h3>
+                    <Popup>                    
+                      <h3>{truck.truck_name}</h3>
                       
                       <div className="image-container">
-                        <ControlledCarousel />
-                        
+                        <ControlledCarousel image1={truck.image1} image2={truck.image2} image3={truck.image3} />                        
                       </div>
-                               <div>
-                                 <p>{truck.info}</p>
-                                 <p>{truck.rating}</p>
-                                 <p>
-                                   {truck.location_lng}, {truck.location_lat}
-                                 </p>
-                               </div>
-                      {truck.truck_name}
+                      <button><Link to="/menu">Submit Order</Link></button>                                            
                     </Popup>
                   </Marker>
                     );
