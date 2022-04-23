@@ -228,3 +228,10 @@ Menu
     height: 150px;
   }
 }
+
+.order-total {  
+  border: 2px solid white;
+  background-color: whitesmoke;
+  width: 200px;
+  color: black
+}
