@@ -3,15 +3,19 @@ const express = require("express");
 require("dotenv").config();
 var cors = require("cors");
 
+const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY) //Secret key goes in here
+//const uuid = require("uuid/v4") //Not sure what this does? // prevents charging a client twice
+
 // express app
 const app = express();
-const port = 3002;
+const PORT = 3002;
 
 var corsOptions = {
   origin: "http://localhost:3000",
   optionsSuccessStatus: 200,
 };
 
+// middleware
 app.use(cors(corsOptions));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json({extended:true}))
@@ -20,7 +24,7 @@ app.use(express.json({extended:true}))
 const pg = require("pg");
 const { Pool } = require("pg");
 // const dbParams = require("./db");
-require("dotenv").config();
+
 
 const pool = new Pool({
   host: "heffalump.db.elephantsql.com",
@@ -108,42 +112,34 @@ try {
     throw e
   }
 })
-//   } finally {
-//     pool.release()
-//   }
-// })().catch(e => console.error(e.stack))
 
 
-    // `INSERT INTO trucks (truck_name, info, rating) VALUES (($1), ($2), ($3));`,[req.body.name, req.body.info, 5], function (err, result) {
-    // if (err) {
-      // console.log("ERROR: req.body",req.body)
-    //   return console.error("error running query", err);
-    // }
-    // console.log("req.body",req.body)
-    // const data = JSON.stringify(result.rows);
-    // // console.log("OBJ", result.rows);
-    // // console.log("JSON", data)
-//     res.json({property_message:"Truck is saved! Start Cooking!"});
-//   });
-// })
-
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
+app.post("/trucks/checkout", async (req, res) => {
+  const {product, token} = req.body
+  // const idempontencyKey = uuid() // stops double charge on a client
+  
+  return stripe.customers.create({
+    email: token.email,
+    source: token.id
+  }).then (customer => {
+    stripe.charges.create( 
+    { 
+      amount: product.price * 100,
+      currency: "CAD",
+      customer: customer.id,
+      receipt_email: token.email,
+      description: `purchase of ${product.name}`
+    })
+  })
+  .then(result => res.status(200).json(result))
+  .catch(err => console.log(err))
+ 
 });
 
 
-// app.post("/signup", async (req, res) => {
-//   console.log("req.body",req.body)
-//   pool.query(
-//     `INSERT INTO trucks (truck_name, info, rating, location_lat, location_lng) VALUES (($1), ($2), ($3), ($4), ($5));`,[req.body.name, req.body.info, 5, req.body.lat, req.body.lng], function (err, result) {
-//     if (err) {
-//       console.log("req.body",req.body)
-//       return console.error("error running query", err);
-//     }
-//     // console.log("req.body",req.body)
-//     // const data = JSON.stringify(result.rows);
-//     // // console.log("OBJ", result.rows);
-//     // // console.log("JSON", data)
-//     res.json({property_message:"Truck is saved! Start Cooking!"});
-//   });
-// })
+
+app.listen(PORT, () => {
+  console.log(`LISTENING ON PORT ${PORT}`);
+});
+
+

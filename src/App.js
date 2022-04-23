@@ -28,15 +28,18 @@ function  App() {
   
   return (
     <div className="App">
+        
       <BrowserRouter>
-        <Nav setUrl={setUrl} />                              
+        <Nav setUrl={setUrl} /> 
+          
         <Routes>
           <Route exact path="/" element={<Map pins={pins} setPoints={setPoints} setUrl={setUrl}  />}/>
           <Route path="/signup" element={<MyTruckLocation/> }/>          
           <Route path="/login" element={<Login /> }/>
           <Route path="/menu" element={<TruckMenu /> }/>                     
         </Routes>
-      </BrowserRouter>     
+       
+      </BrowserRouter>                        
    
     </div>
   );
