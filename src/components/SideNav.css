@@ -1,6 +1,6 @@
 /* The side navigation menu */
 .side-nav-container {
-  z-index: 15;
+  z-index: 15;  
 }
 
 .side-nav-icons {
@@ -12,14 +12,15 @@
   right: 5%; 
   overflow-x: hidden; 
   padding-top: 60px; 
-  transition: 0.5s; 
+  transition: 0.5s;
+  background-color: #5c5b5b; 
 }
 
 .side-nav-icons div {
   padding: 8px 0px 8px 14px;
   text-decoration: none;
   font-size: 20px;
-  color: #5c5b5b;
+  color: #f8f5f5;
   /* display: block; */
   transition: 0.3s;
 }

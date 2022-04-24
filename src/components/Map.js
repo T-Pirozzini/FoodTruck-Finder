@@ -43,41 +43,46 @@ export default function Map(props) {
   
   return (
     <>
-    <MapContainer center={[53.5456, -113.4903]} zoom={13} scrollWheelZoom={true}>
-        
-        <TileLayer
-          attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`"
-);'
-          url={"https://api.mapbox.com/styles/v1/tpirozzini/cl29e9qcl000115n0dxc7a0i7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHBpcm96emluaSIsImEiOiJjbDI5ZTVnbXAwZnUzM2tydGF6aW5xaHR3In0.tSzKVLnd-wE5MYRZ9Qfbhw"}
-          />
-          {props.pins.map((truck) => {
-            return (
-                <Marker
-                  key={truck.id}
-                  position={[truck.location_lat, truck.location_lng ]}            
-                    icon={ truckIcon }
-                    eventHandlers={{
-                      click: (e) => {
-                       {updatePoints(truck)}
-                      },
-                    }}
-                  >                                        
-                    <Tooltip direction="right" offset={[20, 5]} permanent>
-                      {truck.truck_name}
-                    </Tooltip> 
-                    <Popup>                    
-                      <h3>{truck.truck_name}</h3>
-                      
-                      <div className="image-container">
-                        <ControlledCarousel image1={truck.image1} image2={truck.image2} image3={truck.image3} />                        
-                      </div>
-                      <button><Link to="/menu">Submit Order</Link></button>                                            
-                    </Popup>
-                  </Marker>
-                    );
-                  })}              
-      </MapContainer>
-      <SideNav setUrl={props.setUrl} />
+    
+    <div className="map-container">
+      <Schedule setUrl={props.setUrl}/>
+      <MapContainer center={[53.5456, -113.4903]} zoom={13} scrollWheelZoom={true}>
+          
+          <TileLayer
+            attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`"
+  );'
+            url={"https://api.mapbox.com/styles/v1/tpirozzini/cl29e9qcl000115n0dxc7a0i7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHBpcm96emluaSIsImEiOiJjbDI5ZTVnbXAwZnUzM2tydGF6aW5xaHR3In0.tSzKVLnd-wE5MYRZ9Qfbhw"}
+            />
+            {props.pins.map((truck) => {
+              return (
+                  <Marker
+                    key={truck.id}
+                    position={[truck.location_lat, truck.location_lng ]}            
+                      icon={ truckIcon }
+                      eventHandlers={{
+                        click: (e) => {
+                        {updatePoints(truck)}
+                        },
+                      }}
+                    >                                        
+                      <Tooltip direction="right" offset={[20, 5]} permanent>
+                        {truck.truck_name}
+                      </Tooltip> 
+                      <Popup>                    
+                        <h3>{truck.truck_name}</h3>
+                        
+                        <div className="image-container">
+                          <ControlledCarousel image1={truck.image1} image2={truck.image2} image3={truck.image3} />                        
+                        </div>
+                        <button><Link to="/menu">Submit Order</Link></button>                                            
+                      </Popup>
+                    </Marker>
+                      );
+                    })}              
+        </MapContainer>
+      </div>
+      <SideNav setUrl={props.setUrl} />      
+      
       </>
 
 )}

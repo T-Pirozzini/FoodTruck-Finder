@@ -1,22 +1,39 @@
+.schedule-container {
+  display: flex; 
+  position: absolute;
+  z-index: 10;
+  margin-top: 30px;
+  background-color: rgb(47, 189, 170);
+}
+
 .schedule {
-  display: flex;
-  justify-content: center;  
+  /* align-self: center;      */
+  /* background-color: red; */
 }
 
 .MuiPagination-ul {
   /* color: white; */
+  
 }
 
 .schedule .MuiPagination-root {
   color: white;
   background-color: rgba(255, 255, 255, 0.356);
   border-radius: 15px;
+  
+}
+.MuiPagination-root {
+  border: 2px solid;
+  padding: 2px; 
+  
+  
 }
 
 .schedule .MuiPagination-root.Mui-selected {
-  background-color: white;
+  /* background-color: white; */
+  
 }
 
 .schedule .MuiPaginationItem-root {
-  background-color: white;
+  background-color: purple;
 }
