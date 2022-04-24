@@ -1,12 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Tooltip, Popup } from 'react-leaflet'
 import L from 'leaflet';
 import SideNav from "./SideNav";
 import Schedule from "./Schedule";
 import ControlledCarousel from "./Carousel"
 import { Link } from 'react-router-dom';
-
 
 //styles
 import "./Map.css";
@@ -22,6 +21,7 @@ const truckIcon = new L.Icon({
   // shadowSize: [68, 95],
   // shadowAnchor: [20, 92]
 });
+
 
 
 export default function Map(props) {

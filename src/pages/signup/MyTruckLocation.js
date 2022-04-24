@@ -24,7 +24,7 @@ const truckIcon = new L.Icon({
 let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
 
-export default function MyTruckLocationMap() {
+export default function MyTruckLocationMap(props) {
   const [cords, setCords] = useState([0,0]) 
   const [location, setLocation] = useState("monday")  
   const [valueInt, setValueInt] = useState(1)
@@ -78,7 +78,7 @@ const updateDay = ((e, value) =>
         </Marker> 
         <LocationMarker />       
       </MapContainer>
-      <SignUpATruck cords={cords} dayLocation={dayLocation}/>
+      <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl}/>
       <div className="signup-schedule">
         <Stack spacing={1}>
           <Typography>{location.toUpperCase()}</Typography>         

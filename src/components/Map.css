@@ -16,20 +16,16 @@
 .leaflet-container {
   width: 100vw;
   height: 100vh;
-  border-radius: 20px;
-  border: 4px solid lightcoral;
-  /* margin: 0% 5%;  */
   z-index: 0;
 }
 
-.leaflet-popup-content-wrapper {
-  border: 4px solid lightcoral;
+.leaflet-popup-content-wrapper {  
   max-width: 250px;
-  max-height: 350px;    
+  max-height: 350px;   
 }
 
 .carousel-slide {
-  border: 4px solid lightcoral;  
+  
 }
 
 .leaflet-popup-content {  

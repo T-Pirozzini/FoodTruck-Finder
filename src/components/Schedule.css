@@ -3,7 +3,7 @@
   position: absolute;
   z-index: 10;
   margin-top: 30px;
-  background-color: rgb(47, 189, 170);
+  /* background-color: rgb(47, 189, 170); */
 }
 
 .schedule {
@@ -23,10 +23,15 @@
   
 }
 .MuiPagination-root {
-  border: 2px solid;
-  padding: 2px; 
-  
-  
+  border: 2px solid;  
+  padding: 5px;  
+}
+
+.week-day {
+  font-size: 3em;
+  font-weight: 700;
+  /* background-color: aqua; */
+  color: rgb(0, 0, 0);
 }
 
 .schedule .MuiPagination-root.Mui-selected {
@@ -35,5 +40,5 @@
 }
 
 .schedule .MuiPaginationItem-root {
-  background-color: purple;
+  background-color: rgba(9, 0, 128, 0.322);
 }

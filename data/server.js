@@ -23,6 +23,7 @@ app.use(express.json({extended:true}))
 // con setting
 const pg = require("pg");
 const { Pool } = require("pg");
+
 // const dbParams = require("./db");
 
 
@@ -87,16 +88,16 @@ app.post("/signup", async (req, res) => {
 try {
   await pool.query("BEGIN") 
   let insertTrucks = `INSERT INTO trucks (truck_name, info, rating) VALUES (($1), ($2), ($3)) RETURNING id;`
-  let res = await pool.query(insertTrucks, [req.body.name, req.body.info, 5])
+  let result = await pool.query(insertTrucks, [req.body.name, req.body.info, 5])
 
   let insertLocations = `INSERT INTO locations (trucks_id, location_lat, location_lng, day) VALUES (($1), ($2), ($3), ($4));`
-  let insertLocationsValues1 = [res.rows[0].id, req.body.dayLocation[1].lat, req.body.dayLocation[1].lng, "monday"]
-  let insertLocationsValues2 = [res.rows[0].id, req.body.dayLocation[2].lat, req.body.dayLocation[2].lng, "tuesday"]
-  let insertLocationsValues3 = [res.rows[0].id, req.body.dayLocation[3].lat, req.body.dayLocation[3].lng, "wednesday"]
-  let insertLocationsValues4 = [res.rows[0].id, req.body.dayLocation[4].lat, req.body.dayLocation[4].lng, "thursday"]
-  let insertLocationsValues5 = [res.rows[0].id, req.body.dayLocation[5].lat, req.body.dayLocation[5].lng, "friday"]
-  let insertLocationsValues6 = [res.rows[0].id, req.body.dayLocation[6].lat, req.body.dayLocation[6].lng, "saturday"]
-  let insertLocationsValues7 = [res.rows[0].id, req.body.dayLocation[7].lat, req.body.dayLocation[7].lng, "sunday"]
+  let insertLocationsValues1 = [result.rows[0].id, req.body.dayLocation[1].lat, req.body.dayLocation[1].lng, "monday"]
+  let insertLocationsValues2 = [result.rows[0].id, req.body.dayLocation[2].lat, req.body.dayLocation[2].lng, "tuesday"]
+  let insertLocationsValues3 = [result.rows[0].id, req.body.dayLocation[3].lat, req.body.dayLocation[3].lng, "wednesday"]
+  let insertLocationsValues4 = [result.rows[0].id, req.body.dayLocation[4].lat, req.body.dayLocation[4].lng, "thursday"]
+  let insertLocationsValues5 = [result.rows[0].id, req.body.dayLocation[5].lat, req.body.dayLocation[5].lng, "friday"]
+  let insertLocationsValues6 = [result.rows[0].id, req.body.dayLocation[6].lat, req.body.dayLocation[6].lng, "saturday"]
+  let insertLocationsValues7 = [result.rows[0].id, req.body.dayLocation[7].lat, req.body.dayLocation[7].lng, "sunday"]
   // let insertLocationsArray = [insertLocationsValues1, insertLocationsValues2]
 // let days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"] Cycle  through days array later??
   await pool.query(insertLocations, insertLocationsValues1)
@@ -107,6 +108,7 @@ try {
   await pool.query(insertLocations, insertLocationsValues6)
   await pool.query(insertLocations, insertLocationsValues7)  
   await pool.query('COMMIT')
+  res.status(200).json({message: "Truck has been saved."})
   } catch (e) {
     await pool.query('ROLLBACK')
     throw e
