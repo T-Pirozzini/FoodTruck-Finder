@@ -1,6 +1,8 @@
 import './Signup.css'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 // import MyTruckLocationMap from "./MyTruckLocation"
+import { useNavigate } from "react-router-dom";
 
 // MUI Component Imports
 import {Select, InputLabel, FormControl, MenuItem, Stack} from '@mui/material';
@@ -13,6 +15,7 @@ import SendIcon from '@mui/icons-material/Send';
 export default function SignUpATruck(props) {
   const [name, setName] = useState('')
   const [info, setInfo] = useState('')  
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -28,21 +31,16 @@ export default function SignUpATruck(props) {
     fetch("http://localhost:3002/signup",{
       method:"POST",
       headers: {"Content-Type": "application/json" },
-      body: JSON.stringify(attributes)      
-    
+      body: JSON.stringify(attributes)    
+   
     }).then(() => {
-      console.log("Truck Registered");
-    })
+      console.log("Truck Registered");      
+      props.setUrl("http://localhost:3002/trucks")
+      navigate("/")       
+    }).catch ((err)=>{
+      console.log(err)
+    })    
   }
-
-  // let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
-  // const updateDay = ((e, value) =>
-  //  {
-  //   console.log("currentDay", value)
-  //   console.log("Day of Week:", week[value])
-  //   setLocation(week[value])
-  //  })
 
   return (       
     <form  onSubmit={handleSubmit} className="registration-form">

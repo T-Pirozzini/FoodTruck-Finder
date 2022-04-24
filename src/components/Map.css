@@ -3,28 +3,29 @@
   border: 4px solid lightcoral;
   margin: 0% 5%;  
 } */
+
+.map-container {
+  display: flex;  
+  justify-content: center;
+}
+
 .leaflet-appearance {
   height: 200px;
   width: 200px;
 }
 .leaflet-container {
-
-  width: 90vw;
-  height: 80vw;
-  border-radius: 20px;
-  border: 4px solid lightcoral;
-  margin: 0% 5%; 
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
 }
 
-.leaflet-popup-content-wrapper {
-  border: 4px solid lightcoral;
+.leaflet-popup-content-wrapper {  
   max-width: 250px;
-  max-height: 350px;    
+  max-height: 350px;   
 }
 
 .carousel-slide {
-  border: 4px solid lightcoral;  
+  
 }
 
 .leaflet-popup-content {  

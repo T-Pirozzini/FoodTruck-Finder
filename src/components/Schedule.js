@@ -16,16 +16,15 @@ export default function Schedule(props) {
   }) 
 
   return (   
-    <> 
-    <div className="schedule">          
-      <Stack spacing={1}>
-        <Typography>{day.toUpperCase()}</Typography>         
-        <Pagination count={7} value={day} onChange={handleChange} size='medium' variant="text" color="primary" />      
-      </Stack>          
-    </div>
-    <div className="filter-schedule">           
-             
-    </div>
+    <>
+    <div className="schedule-container">   
+      <div className="schedule">          
+        <Stack spacing={1}>
+          <Typography><div className="week-day">{day.toUpperCase()}</div></Typography>         
+          <Pagination count={7} value={day} onChange={handleChange} size='medium' variant="text" color="primary" />      
+        </Stack>          
+      </div>
+    </div>     
     </>    
   )
 }

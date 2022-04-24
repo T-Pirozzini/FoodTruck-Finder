@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel'
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Carousel.css"
 
 export default function ControlledCarousel(props) {
   const [index, setIndex] = useState(0);
@@ -18,6 +19,7 @@ export default function ControlledCarousel(props) {
           className="d-block w-100"
           src={props.image1}
           alt="First slide"
+          
         />
         <Carousel.Caption>
           <h3></h3>

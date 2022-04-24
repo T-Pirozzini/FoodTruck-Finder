@@ -7,7 +7,7 @@ import { useState } from 'react';
 // recreating the `Stripe` object on every render.
 
 
-export default function Stripe() {
+export default function Stripe(props) {
   const [product,setProduct] = useState({
     name: "buy food",
     price: 10,
@@ -43,8 +43,8 @@ export default function Stripe() {
     <StripeCheckout 
     stripeKey="pk_test_51KlK35DzKwWre22N3YsmHaXDhnTy33YXdcliEbDAnx7EEbFs3lCedAcj8ZZoN8hLc550S9X9H8ls9Exnq422CG1600Wyfa2aLV"
     token={makePayment}
-    name="buy"
-    amount={product.price * 100} 
+    name="Pay For Food!"
+    amount={props.price} 
     /> 
   )
 };

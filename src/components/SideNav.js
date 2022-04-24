@@ -19,12 +19,12 @@ function closeNav() {
 
   return (
     <div className="side-nav-container">
-      <span className="open-btn" onClick={openNav}><BsChevronDoubleLeft /> FILTER</span>         
-      <div className="side-nav-icons">           
-        <div className="close-btn" onClick={closeNav}><BsXLg /></div>
+      <span className="open-btn" onClick={openNav}><BsChevronDoubleLeft /> FILTER TRUCKS</span>         
+      <div className="side-nav-icons">         
         <div onClick={()=> props.setUrl("http://localhost:3002/trucks/bbq")}><FaDrumstickBite /></div>
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks")}><FaHotdog/></div>
+        <div onClick={()=> props.setUrl("http://localhost:3002/trucks")}><FaHotdog/></div>        
         <div onClick={()=> props.setUrl("http://localhost:3002/trucks/coffee")}><FaCoffee /></div>
+        <div className="close-btn" onClick={closeNav}><BsXLg /></div>
       </div>
       
     </div>    

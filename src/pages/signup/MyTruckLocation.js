@@ -14,21 +14,18 @@ import L from 'leaflet';
 import "./Signup.css"
 import 'leaflet/dist/leaflet.css';
 
-
 const truckIcon = new L.Icon({
   iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",  
   iconSize: [30, 30],  
 });
 
+// let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
-let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
-
-export default function MyTruckLocationMap() {
+export default function MyTruckLocationMap(props) {
   const [cords, setCords] = useState([0,0]) 
   const [location, setLocation] = useState("monday")  
   const [valueInt, setValueInt] = useState(1)
-  const [dayLocation, setDayLocation] = useState({1:{},2:{},3:{},4:{},5:{},6:{}, 7:{}})
+  const [dayLocation, setDayLocation] = useState({1:{lat: 0, lng: 0},2:{lat: 0, lng: 0},3:{lat: 0, lng: 0},4:{lat: 0, lng: 0},5:{lat: 0, lng: 0},6:{lat: 0, lng: 0}, 7:{lat: 0, lng: 0}})
   // console.log("DAYLOCATION:", dayLocation)
   let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
@@ -39,8 +36,7 @@ const updateDay = ((e, value) =>
   setCords([0,0])
   setLocation(week[value])
   setValueInt(value)
- })
-  
+ })  
   
   const LocationMarker = () => {  
     const map = useMapEvents({
@@ -78,7 +74,7 @@ const updateDay = ((e, value) =>
         </Marker> 
         <LocationMarker />       
       </MapContainer>
-      <SignUpATruck cords={cords} dayLocation={dayLocation}/>
+      <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl}/>
       <div className="signup-schedule">
         <Stack spacing={1}>
           <Typography>{location.toUpperCase()}</Typography>         
