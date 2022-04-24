@@ -117,7 +117,8 @@ try {
 app.post("/trucks/checkout", async (req, res) => {
   const {product, token} = req.body
   // const idempontencyKey = uuid() // stops double charge on a client
-  
+  console.log("EMAIL", token.email)
+  console.log("PRODUCT", product)
   return stripe.customers.create({
     email: token.email,
     source: token.id

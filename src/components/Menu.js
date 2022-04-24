@@ -22,7 +22,7 @@ const Menu = ({ items }) => {
   
 }
 
-const stripePromise = loadStripe('pk_test_51KlK35DzKwWre22N3YsmHaXDhnTy33YXdcliEbDAnx7EEbFs3lCedAcj8ZZoN8hLc550S9X9H8ls9Exnq422CG1600Wyfa2aLV');
+
 
 // helper function to updat the total and then call this function inside of update quantity
 
