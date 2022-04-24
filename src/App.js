@@ -15,15 +15,12 @@ import MyTruckLocation from './pages/signup/MyTruckLocation'
 import 'leaflet/dist/leaflet.css';
 import TruckMenu from "./pages/menus/TruckMenu"
 
-
-
 function  App() {
   const [url, setUrl] = React.useState("http://localhost:3002/trucks");
   const [points,setPoints] = React.useState({})
   const { data: pins } = useFetch(url);    
   
-  useEffect(()=> {
-    console.log("use effect")    
+  useEffect(()=> {       
     pins.map((pin) => pin.expand = false)
     setPoints(pins)           
   }, [pins])
