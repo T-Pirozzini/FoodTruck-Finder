@@ -1,47 +1,40 @@
 import React, { useState } from 'react'
 
-import SpanningTable from "./SpanningTable"
+// components
 import Stripe from './Stripe';
+import Basket from './Basket';
 
+// styles
+import "./MenuBasket.css"
 
-const Menu = ({ items }) => {
- const [quantity, setQuantity] = useState(0);
- const [order,setOrder] = useState({})
- const [total, setTotal] = useState(0);
+const Menu = ({ items }) => { 
+ const [cartItems, setCartItems] = useState([]); 
 
-//  function subtotal(items) {
-//   return items.map(({ price }) => price).reduce((sum, i) => sum + i, 0);
-// }
+  const onAdd = (product) => {
+    const itemExists = cartItems.find((item) => item.id === product.id);
+    if (itemExists) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id ? { ...itemExists, qty: itemExists.qty + 1 } : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...product, qty: 1 }]);
+    }
+  };
 
-
-const updateQuantity = (e, price) => {
-  // let priceArray = []
-  // priceArray.push(price)
-  console.log("e", e.target)
-  console.log("PRICE", price);
-
-  // const invoiceTotal = subtotal(priceArray);  
- 
-  // console.log("invoice Total", invoiceTotal)
-  setTotal(total + price)
-  console.log("Total", total)
-}
-
-const reduceQuantity = (e, price) => {
-  // let priceArray = []
-  // priceArray.push(price)
-  console.log("e", e.target)
-  console.log("PRICE", price);
-
-  // const invoiceTotal = subtotal(priceArray);  
- 
-  // console.log("invoice Total", invoiceTotal)
-  setTotal(total - price)
-  console.log("Total", total)
-}
-
-
-// helper function to updat the total and then call this function inside of update quantity
+  const onRemove = (product) => {
+    const itemExists = cartItems.find((item) => item.id === product.id);
+    if (itemExists.qty === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id ? { ...itemExists, qty: itemExists.qty - 1 } : item
+        )
+      );
+    }
+  };
 
   return (
     <div className="section-center">
@@ -53,31 +46,28 @@ const reduceQuantity = (e, price) => {
             <div className="item-info">
               <header>
                 <h4>{title}</h4>
-                <h4 className="price">${price}</h4>
+                <h4 className="price">${(price / 100).toFixed(2)}</h4>
               </header>
               <p className="item-text">{desc}</p>
-              <button onClick={(event) => updateQuantity(event, price)}>Add to cart!</button>
-              <label>Quantity:</label>           
-              <input className="quantity" name="quantity" type="number" min="0" max="10" ></input>
-              <button onClick={(event) => reduceQuantity(event, price)}>Remove from cart!</button>
+              <button onClick={(() => {onAdd(menuItem)})}>Add to cart!</button>              
+              <button onClick={(() => {onRemove(menuItem)})}>Remove from cart!</button>
             </div>
           </article>         
         )
       })}
         <section className="order-table">
-        </section>           
-        {total}                  
-        <SpanningTable
-          id="spanning-table"
-          items = { items } 
-        />
-        <Stripe />
+        <Basket
+          cartItems={cartItems}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          ></Basket>               
+          </section>           
+       
+     
       
     </div>     
-  )
-  
+  )  
 }
- 
 
 export default Menu
 
