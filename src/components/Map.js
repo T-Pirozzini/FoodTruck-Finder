@@ -13,8 +13,8 @@ import "./Map.css";
 import 'leaflet/dist/leaflet.css';
 
 const truckIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  // iconRetinaUrl: require("../assets/pointerIcon.svg"),  
+  iconUrl: require("../assets/food-truck.png"),
+  // iconRetinaUrl: ,  
   popupAnchor: [1, -1],
   iconSize: [55, 55],
   // shadowUrl: "https://cdn-icons-png.flaticon.com/128/7314/7314532.png",
