@@ -29,7 +29,7 @@ export default function Stripe() {
       headers,
       body: JSON.stringify(body)
     }).then((res) => {
-      console.log("responce", res)
+      console.log("response", res)
     })
     
     .catch((err) => {
