@@ -80,8 +80,9 @@ export default function Map(props) {
                       );
                     })}              
         </MapContainer>
+        <SideNav setUrl={props.setUrl} />
       </div>
-      <SideNav setUrl={props.setUrl} />      
+            
       
       </>
 
