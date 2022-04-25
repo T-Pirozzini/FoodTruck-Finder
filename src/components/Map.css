@@ -31,3 +31,7 @@
 .leaflet-popup-content {  
   
 }
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {  
+  border: 2px solid rgb(13, 4, 131);   
+}

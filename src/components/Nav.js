@@ -13,8 +13,8 @@ export default function Nav(props) {
         <div id="title" style={{color: "white"}}>Food Truck Finder</div>
       </div>
       
-      <div className="nav-items">      
-        <div className="link">Favourites</div>
+      <div id="nav-items">      
+        {/* <div className="link">Favourites</div> */}
         <div><Link to="/signup">Add Truck</Link></div>
         <div><Link to="/login">Logout</Link></div>
       </div>           

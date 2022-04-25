@@ -21,7 +21,7 @@ export default function Schedule(props) {
       <div className="schedule">          
         <Stack spacing={1}>
           <Typography><div className="week-day">{day.toUpperCase()}</div></Typography>         
-          <Pagination count={7} value={day} onChange={handleChange} size='medium' variant="text" color="primary" />      
+          <Pagination count={7} value={day} onChange={handleChange} size='large' variant="text" color="primary" />      
         </Stack>          
       </div>
     </div>     

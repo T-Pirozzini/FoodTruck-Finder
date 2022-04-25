@@ -2,8 +2,9 @@
 import './SideNav.css'
 import React from 'react'
 
-import { FaDrumstickBite, FaCoffee, FaHotdog } from "react-icons/fa";
-import { BsXLg, BsChevronDoubleLeft } from "react-icons/bs"; 
+import { FaDrumstickBite, FaCoffee, FaHotdog, FaHamburger, FaIceCream } from "react-icons/fa";
+import { BsXLg, BsChevronDoubleDown } from "react-icons/bs";
+import { GiPotato, GiNachos } from "react-icons/gi";
 
 export default function SideNav(props) {
 
@@ -19,12 +20,19 @@ function closeNav() {
 
   return (
     <div className="side-nav-container">
-      <span className="open-btn" onClick={openNav}><BsChevronDoubleLeft /> FILTER TRUCKS</span>         
+      <div className="filter-wrapper">
+        <span className="open-btn" onClick={openNav}>FILTER BY</span>
+        <span className="open-btn" onClick={openNav}>CATEGORY</span>
+        <span className="open-btn arrow" onClick={openNav}><BsChevronDoubleDown /></span>
+      </div>         
       <div className="side-nav-icons">         
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/bbq")}><FaDrumstickBite /></div>
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks")}><FaHotdog/></div>        
+        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/bbq")}><FaDrumstickBite /></div>       
         <div onClick={()=> props.setUrl("http://localhost:3002/trucks/coffee")}><FaCoffee /></div>
-        <div className="close-btn" onClick={closeNav}><BsXLg /></div>
+        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/burger")}><FaHamburger /></div>
+        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/potato")}><GiPotato /></div>
+        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/nachos")}><GiNachos /></div>
+        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/dessert")}><FaIceCream /></div>
+        <span className="close-btn" onClick={closeNav}><BsXLg /></span>
       </div>
       
     </div>    

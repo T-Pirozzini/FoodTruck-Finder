@@ -15,8 +15,9 @@ import "./Signup.css"
 import 'leaflet/dist/leaflet.css';
 
 const truckIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",  
-  iconSize: [30, 30],  
+  iconUrl: require("../../assets/food-truck.png"),
+  // iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",  
+  iconSize: [60, 60],  
 });
 
 // let week = ["err", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
@@ -75,13 +76,14 @@ const updateDay = ((e, value) =>
           >          
           </Marker> 
           <LocationMarker />
+
+        </MapContainer>      
           <div className="signup-schedule">
           <Stack spacing={1}>
             <Typography><div className="week-day">{location.toUpperCase()} </div></Typography>         
             <Pagination count={7} value={location} onChange={updateDay} size='medium' variant="text" color="primary" />      
           </Stack>
         </div>       
-        </MapContainer>      
       <div className="signup-truck-container">
         <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl}/>
       </div>
