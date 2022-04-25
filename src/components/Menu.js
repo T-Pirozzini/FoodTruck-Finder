@@ -37,6 +37,7 @@ const Menu = ({ items }) => {
   };
   
   return (
+    <>
     <div className="section-center">
       {items.map((menuItem) => {
         const { id, title, img, price, desc } = menuItem
@@ -45,7 +46,7 @@ const Menu = ({ items }) => {
             <img src={img} alt={title} className="photo" />
             <div className="item-info">
               <header>
-                <h4>{title}</h4>
+                <h2 class="menu-item-title">{title}</h2>
                 <h4 className="price">${(price / 100).toFixed(2)}</h4>
               </header>
               <p className="item-text">{desc}</p>
@@ -55,17 +56,21 @@ const Menu = ({ items }) => {
           </article>         
         )
       })}
-        <section className="order-table">
-        <Basket
+        
+               
+       
+     
+      
+    </div>   
+      
+    <section className="order-table">
+    <Basket
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
           ></Basket>               
-          </section>           
-       
-     
-      
-    </div>     
+          </section> 
+     </>  
   )  
 }
 

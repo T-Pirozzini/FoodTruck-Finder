@@ -44,7 +44,7 @@ export default function SignUpATruck(props) {
 
   return (       
     <form  onSubmit={handleSubmit} className="registration-form">
-      <h2 className='registration-components'>Food Truck Registration</h2>
+      <div className='registration-title'>Food Truck Registration</div>
       <label className='name-of-truck'>
         <span>Name Your Truck:</span>
         
@@ -59,9 +59,9 @@ export default function SignUpATruck(props) {
       {/* Drop Down Info */}
       <div className="dropdown-container">
         <FormControl fullWidth>
-          <div id="input-label">
+          
             <InputLabel><div className="text">Your truck specializes in</div></InputLabel>
-          </div>
+         
           <div id="input-options">
             <Select          
               id="info-items"
@@ -83,44 +83,44 @@ export default function SignUpATruck(props) {
         <table>
           <thead>
             <tr>
-              <th>Day</th>
+              <th></th>
               <th>Latitude</th>
               <th>Longitude</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Monday</td>
+              <td className="day">Monday</td>
               <td>{props.dayLocation[1].lat}</td>
               <td>{props.dayLocation[1].lng}</td>
             </tr>
             <tr>
-              <td>Tuesday</td>
+              <td className="day">Tuesday</td>
               <td>{props.dayLocation[2].lat}</td>
               <td>{props.dayLocation[2].lng}</td>
             </tr>
             <tr>
-              <td>Wednesday</td>
+              <td className="day">Wednesday</td>
               <td>{props.dayLocation[3].lat}</td>
               <td>{props.dayLocation[3].lng}</td>
             </tr>
             <tr>
-              <td>Thursday</td>
+              <td className="day">Thursday</td>
               <td>{props.dayLocation[4].lat}</td>
               <td>{props.dayLocation[4].lng}</td>
             </tr>
             <tr>
-              <td>Friday</td>
+              <td className="day">Friday</td>
               <td>{props.dayLocation[5].lat}</td>
               <td>{props.dayLocation[5].lng}</td>
             </tr>
             <tr>
-              <td>Saturday</td>
+              <td className="day">Saturday</td>
               <td>{props.dayLocation[6].lat}</td>
               <td>{props.dayLocation[6].lng}</td>
             </tr>
             <tr>
-              <td>Sunday</td>
+              <td className="day">Sunday</td>
               <td>{props.dayLocation[7].lat}</td>
               <td>{props.dayLocation[7].lng}</td>
             </tr>
