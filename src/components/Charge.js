@@ -2,7 +2,7 @@ import Stripe from "stripe";
 require('dotenv').config()
 // don't commit your real stripe secret key... use env variables!!
 // https://www.leighhalliday.com/secrets-env-vars-nextjs-now
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe("sk_test_51KlK35DzKwWre22NHQZSNVaJtxojPGAlI2qzL28UmFKBNuhkMha5dDIlAqsoScODeo4x1aGCqgSRNP0Kw6PnyKID007P5hfnh5");
 
 export default async (req, res) => {
   const { id, amount } = req.body;

@@ -38,6 +38,7 @@ const CheckoutForm = ({ success }) => {
       <img
         src="https://images.ricardocuisine.com/services/recipes/500x675_7700.jpg"
         style={{ maxWidth: "50px" }}
+        alt=""
       />
       <CardElement />
       <button type="submit" disabled={!stripe}>
@@ -49,7 +50,7 @@ const CheckoutForm = ({ success }) => {
 
 // you should use env variables here to not commit this
 // but it is a public key anyway, so not as sensitive
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe("pk_test_51KlK35DzKwWre22N3YsmHaXDhnTy33YXdcliEbDAnx7EEbFs3lCedAcj8ZZoN8hLc550S9X9H8ls9Exnq422CG1600Wyfa2aLV");
 
 export default function SubmitOrder() {
   const [status, setStatus] = React.useState("ready");

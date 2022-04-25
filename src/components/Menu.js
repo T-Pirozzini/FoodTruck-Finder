@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-import SubmitOrder from './CardField';
-import { loadStripe } from "@stripe/stripe-js";
-import {Elements, CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import axios from "axios";
-
+// import SubmitOrder from './CardField';
 
 
 const Menu = ({ items }) => {
@@ -59,7 +55,7 @@ const Menu = ({ items }) => {
         </article>
         <button>Submit Order</button>
         <article>
-          <SubmitOrder />
+          {/* <SubmitOrder /> */}
         </article>       
           
     </div>     
