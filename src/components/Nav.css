@@ -35,7 +35,8 @@
 }
 #nav-items {
   display: flex; 
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
   font-size: 1.5em;
   color: white;
 }

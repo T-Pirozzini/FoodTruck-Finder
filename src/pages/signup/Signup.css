@@ -11,7 +11,12 @@
 .signup-schedule {
   position: absolute;
   z-index: 500;
-  margin-top: 20px;  
+  margin-top: 20px;
+  margin-right: 1150px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.356);
+  border: 1px solid white;
+  border-radius: 15px;
 }
 /* Schedule Component */
 .MuiPagination-root {  
@@ -42,43 +47,6 @@
   display: flex;
   justify-content: center;
 }
-.name-of-truck {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin-bottom: 50px;
-  font-size: 2em;
-  color: black;
-}
-
-.signup-btn .MuiButton-root {
-  background-color:rgb(46, 79, 228);
-}
-
-
-table, tr, thead, td{
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: ;
-  padding: 5px;
-  color: black;
-  background-color: whitesmoke;  
-}
-
-.input-label {  
-  color: white; 
-  width: 500px;
-  
-}
-.input-options {  
-  color: white; 
-  width: 500px;  
-}
-
-#input-items {  
-  color: white; 
-  width: 500px;  
-}
 
 /* SignupATruck */
 .registration-form {
@@ -90,7 +58,61 @@ table, tr, thead, td{
   margin-right: 5%;  
 }
 .registration-components {
+  width: 100%;
+  font-size: 3em;
+  font-family: 'Josefin Sans', sans-serif; 
+  margin: 20px 20px 40px; 
+}
+.name-of-truck {
+  font-family: 'Josefin Sans', sans-serif;
   display: flex;
-  margin: 30px;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 50px;
+  font-size: 2em;
+  color: black;
+}
+#truck-input {
   font-family: 'Permanent Marker', cursive;
+  padding: 10px;
+}
+.text {
+  color: rgb(5, 5, 5);
+  font-size: 1.5em;
+}
+
+/* Drop Down */
+.dropdown-container {
+  display: flex;
+}
+
+#input-label {  
+  color: white; 
+  font-size: 100px;
+  width: 200px;  
+}
+
+#input-options {  
+  color: white;
+  font-size: 100px; 
+  width: 500px;
+}
+
+
+/* #info-items {  
+  color: white; 
+  width: 200px;  
+} */ 
+
+table, tr, thead, td{
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: ;
+  padding: 5px;
+  color: black;
+  background-color: whitesmoke;  
+}
+
+.signup-btn .MuiButton-root {
+  background-color:rgb(46, 79, 228);
 }
