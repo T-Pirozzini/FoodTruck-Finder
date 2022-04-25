@@ -15,8 +15,8 @@ export default function Nav(props) {
       
       <div className="nav-items">      
         <div className="link">Favourites</div>
-        <div><Link to="/signup">Signup</Link></div>
-        <div><Link to="/login">Login</Link></div>
+        <div><Link to="/signup">Add Truck</Link></div>
+        <div><Link to="/login">Logout</Link></div>
       </div>           
     </div>
   )

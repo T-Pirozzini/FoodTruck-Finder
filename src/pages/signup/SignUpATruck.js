@@ -44,9 +44,9 @@ export default function SignUpATruck(props) {
 
   return (       
     <form  onSubmit={handleSubmit} className="registration-form">
-      <h2 className='registration-components'>Register Your FoodTruck</h2>
+      <h2 className='registration-components'>Food Truck Registration</h2>
       <label className='registration-components name-of-truck'>
-        <span>Name of you're truck:</span>
+        <span>Name Your Truck:</span>
         
         <input 
         // type="email"
@@ -57,31 +57,25 @@ export default function SignUpATruck(props) {
       
       {/* Drop Down Info */}
       <FormControl fullWidth  className='registration-components'>
-        <InputLabel>Info:</InputLabel>
-        <Select          
-          id="info-items"
-          value={info}          
-          onChange={(e) => setInfo(e.target.value)}                 
-        >
-          <MenuItem value={"coffee"}>Coffee</MenuItem>
-          <MenuItem value={"potato"}>Potato</MenuItem>
-          <MenuItem value={"bbq"}>BBQ</MenuItem>
-        </Select>
-      </FormControl>        
-      
-      <div className="lat-long-container">
-        <label>
-          <span>Latitude:</span>
-          {props.cords[0]}
-        </label>
-        <label>
-          <span>Longitude:</span>
-          {props.cords[1]}
-        </label>
-      </div>
-
-      {/* Table */}
-      
+        <div className="input-label">
+          <InputLabel>Your truck specializes in </InputLabel>
+        </div>
+        <div className="input-options">
+          <Select          
+            id="info-items"
+            value={info}          
+            onChange={(e) => setInfo(e.target.value)}                 
+          >
+            <MenuItem value={"coffee"}>Coffee</MenuItem>
+            <MenuItem value={"potato"}>Potatos</MenuItem>
+            <MenuItem value={"bbq"}>BBQ</MenuItem>
+            <MenuItem value={"nachos"}>Nachos</MenuItem>
+            <MenuItem value={"dessert"}>Dessert</MenuItem>
+            <MenuItem value={"burgers"}>Burgers</MenuItem>
+          </Select>
+        </div>
+      </FormControl>      
+            
       <table>
         <thead>
           <tr>

@@ -55,33 +55,38 @@ const updateDay = ((e, value) =>
   // console.log("day array ", dayLocation)
   return (
     <>
-    <div className="registration-container">  
-      <MapContainer
-        id="signup-map" 
-        center={[53.5456, -113.4903]} 
-        zoom={14} 
-        scrollWheelZoom={true}          
-      >
-        <TileLayer
-           attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`"
-           );'
-          url={"https://api.mapbox.com/styles/v1/tpirozzini/cl29e9qcl000115n0dxc7a0i7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHBpcm96emluaSIsImEiOiJjbDI5ZTVnbXAwZnUzM2tydGF6aW5xaHR3In0.tSzKVLnd-wE5MYRZ9Qfbhw"}         
-          />        
-        <Marker
-        position={cords}
-        icon={ truckIcon }       
-        >          
-        </Marker> 
-        <LocationMarker />       
-      </MapContainer>
-      <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl}/>
-      <div className="signup-schedule">
-        <Stack spacing={1}>
-          <Typography>{location.toUpperCase()}</Typography>         
-          <Pagination count={7} value={location} onChange={updateDay} size='medium' variant="outlined" color="primary" />      
-        </Stack>
+    <div className="registration-container">
+      
+            
+        <MapContainer
+          id="signup-map" 
+          center={[53.5456, -113.4903]} 
+          zoom={14} 
+          scrollWheelZoom={true}          
+          >
+          <TileLayer
+            attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`"
+            );'
+            url={"https://api.mapbox.com/styles/v1/tpirozzini/cl29e9qcl000115n0dxc7a0i7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHBpcm96emluaSIsImEiOiJjbDI5ZTVnbXAwZnUzM2tydGF6aW5xaHR3In0.tSzKVLnd-wE5MYRZ9Qfbhw"}         
+            />        
+          <Marker
+          position={cords}
+          icon={ truckIcon }       
+          >          
+          </Marker> 
+          <LocationMarker />
+          <div className="signup-schedule">
+          <Stack spacing={1}>
+            <Typography><div className="week-day">{location.toUpperCase()} </div></Typography>         
+            <Pagination count={7} value={location} onChange={updateDay} size='medium' variant="text" color="primary" />      
+          </Stack>
+        </div>       
+        </MapContainer>      
+      <div className="signup-truck-container">
+        <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl}/>
       </div>
     </div>
+    
     </>
   )
 }

@@ -31,26 +31,3 @@
 .leaflet-popup-content {  
   
 }
-/* #info-window {
-
-
-.truck-card {  
-  color: #333;  
-  border-radius: 4px;
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  position: relative;
-  max-width: 150px;
-  max-height: 150px;    
-} 
-.truck-card:hover {
-  transform: rotate(3deg);
-}
-.truck-card h3 {
-  color: #333;
-  margin-bottom: 6px;
-}
-.truck-card p {
-  color: #999;
-  font-size: 0.9em;
-} */
