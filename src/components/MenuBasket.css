@@ -1,7 +1,12 @@
-.order-table {
+.order-container {
   display: flex;
- background-color: #404040;
- width: 50%;
+  justify-content: center;
+  width: 30%;  
+  font-size: large;
+}
+.order-table {  
+  display: flex;
+  justify-content: center;  
 }
 
 body {
@@ -14,9 +19,11 @@ h3 {
 }
 h1 {
   font-size: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 h2 {
   font-size: 1.2rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 h3 {
   font-size: 1rem;
@@ -26,7 +33,7 @@ a {
 }
 .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .row.center {
   align-items: center;
@@ -38,7 +45,7 @@ a {
   flex: 2;
 }
 .block {
-  background-color: #0f0d0d;
+  background-color: #0f0d0d2a;
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
@@ -73,4 +80,12 @@ button.badge {
   border: none;
   color: #ffffff;
   width: 1.5rem;
+}
+.main-title {
+  font-size: 5em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.menu-item-title {
+  font-size: 1.8em;
 }

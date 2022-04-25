@@ -2,6 +2,7 @@ import {Elements} from '@stripe/react-stripe-js';
 import StripeCheckout from "react-stripe-checkout"
 import { useState } from 'react';
 // require("dotenv").config();
+import { useNavigate } from "react-router-dom";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -14,6 +15,7 @@ export default function Stripe(props) {
     productBy:"us"
     
   })
+  const navigate = useNavigate();
 
   const makePayment = token => {
     const body = {
@@ -30,6 +32,8 @@ export default function Stripe(props) {
       body: JSON.stringify(body)
     }).then((res) => {
       console.log("response", res)
+      // props.setUrl("http://localhost:3002/trucks")
+      navigate("/")  
     })
     
     .catch((err) => {

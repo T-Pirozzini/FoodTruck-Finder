@@ -23,7 +23,7 @@ function App() {
     <main>
       <section className="menu section">
         <div className="title">
-          <h2>The Nacho Cart</h2>
+          <div className="main-title">The Nacho Cart</div>
           <div className="underline"></div>
         </div>
         <Categories categories={categories} filterItems={filterItems} />

@@ -2,6 +2,16 @@
   display: flex;
   justify-content: flex-end; 
 }
+.registration-title {
+  font-size: 3em;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 20px 20px 40px;
+  color: black;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.356);
+  border: 1px solid white;
+  border-radius: 15px; 
+}
 #signup-map {
   display: flex;
   justify-content: center;
@@ -19,27 +29,14 @@
   border-radius: 15px;
 }
 /* Schedule Component */
-.MuiPagination-root {  
-  /* background-color: rgba(119, 230, 245, 0.622);
-  padding: 10px;
-  border-radius: 5px;  */
-  
+.MuiPagination-root {
   color: white;
   background-color: rgba(255, 255, 255, 0.356);
   border-radius: 15px;
 }
-
-.MuiPagination-root.Mui-selected {
-  /* background-color: white;   */
-}
-
-.MuiPaginationItem-root {
-  /* background-color: white; */
-}
 .week-day {
   font-size: 2.5em;
   font-weight: 700;
-  /* background-color: aqua; */
   color: rgb(0, 0, 0);
 }
 .signup-truck-container {
@@ -51,17 +48,8 @@
 /* SignupATruck */
 .registration-form {
   display: flex;
-  flex-direction: column;    
-  width: 50%;
-  align-items: center;
-  /* border: 2px solid green; */
-  margin-right: 5%;  
-}
-.registration-components {
-  width: 100%;
-  font-size: 3em;
-  font-family: 'Josefin Sans', sans-serif; 
-  margin: 20px 20px 40px; 
+  flex-direction: column;  
+  align-items: center;   
 }
 .name-of-truck {
   font-family: 'Josefin Sans', sans-serif;
@@ -69,50 +57,51 @@
   flex-direction: column;
   width: 300px;
   margin-bottom: 50px;
-  font-size: 2em;
+  font-size: 1.5em;
   color: black;
 }
 #truck-input {
   font-family: 'Permanent Marker', cursive;
-  padding: 10px;
 }
 .text {
   color: rgb(5, 5, 5);
-  font-size: 1.5em;
+  font-size: 1.8em;  
 }
 
 /* Drop Down */
-.dropdown-container {
-  display: flex;
-}
-
 #input-label {  
-  color: white; 
+  color: black; 
   font-size: 100px;
   width: 200px;  
 }
-
-#input-options {  
-  color: white;
-  font-size: 100px; 
-  width: 500px;
+#info-items {  
+  color: white; 
+  width: 450px; 
+  font-size: 1.5em;  
 }
 
-
-/* #info-items {  
-  color: white; 
-  width: 200px;  
-} */ 
-
-table, tr, thead, td{
-  border: 1px solid black;
+/* Table */
+.table-container {
+  background-color: rgba(56, 252, 89, 0.226);
+  border: 1px solid white;
+  border-radius: 15px; 
+  padding: 15px;
+  width: 500px;
+  margin: 30px 0px;
+}
+table, tr, thead, td{  
   border-radius: 5px;
-  box-shadow: ;
   padding: 5px;
   color: black;
-  background-color: whitesmoke;  
+  padding: 5px;  
 }
-
+th {
+  font-size: 1.2em;
+  width: 200px;
+}
 .signup-btn .MuiButton-root {
   background-color:rgb(46, 79, 228);
+}
+.day {
+  font-weight: 700;
 }

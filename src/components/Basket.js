@@ -13,26 +13,35 @@ export default function Basket(props) {
   const shippingPrice = itemsPrice > 2000 ? 0 : 20;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
   return (
-    <aside className="block col-1">
-      <h2>Cart Items</h2>
-      <div>
-        {cartItems.length === 0 && <div>Cart is empty</div>}
-        {cartItems.map((item) => (
-          <div key={item.id} className="row">
-            <div className="col-2">{item.title}</div>
-            <div className="col-2">
-              <button onClick={() => onRemove(item)} className="remove">
-                -
-              </button>{' '}
-              <button onClick={() => onAdd(item)} className="add">
-                +
-              </button>
-            </div>
+    <div className="order-container">
+      <aside className="block col-1">
+        <h2>Current Order</h2>
+        <div>
+          {cartItems.length === 0 && <div>No items in order</div>}
+          {cartItems.map((item) => (
+            <div key={item.id} className="row">
+              <div className="col-2">{item.title}</div>
 
-            <div className="col-2 text-right">
-              {item.qty} x ${(item.price / 100).toFixed(2)}
+              {/* <div className="col-2">
+                <button onClick={() => onRemove(item)} className="remove">
+                  -
+                </button>{' '}
+                <button onClick={() => onAdd(item)} className="add">
+                  +
+                </button>
+              </div> */}
+              <div className="col-2 text-right">
+              <button onClick={() => onRemove(item)} className="remove">
+                  -
+                </button>{' '}
+                <button onClick={() => onAdd(item)} className="add">
+                  +
+                </button>
+
+                {item.qty} x ${(item.price / 100).toFixed(2)}
+              </div>
             </div>
-          </div>
+          
         ))}
 
         {cartItems.length !== 0 && (
@@ -64,6 +73,7 @@ export default function Basket(props) {
           </>
         )}
       </div>
-    </aside>
+      </aside>
+    </div>
   );
 }
