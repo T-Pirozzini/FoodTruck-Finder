@@ -4,7 +4,7 @@ const menu = [
     title: 'Skillet Nachos',
     category: 'Breakfast Nachos',
     price: 1500,
-    img: './assets/menu/skillet_nachos.jpeg',
+    img: 'https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/menu/skillet_nachos.jpeg?raw=true',
     desc: `Breakfast nachos with fresh vegetables. Served in a to go container.`,
   },
   {
@@ -13,15 +13,15 @@ const menu = [
     category: 'Breakfast Nachos',
     price: 1700,
     img:
-      'https://ocdn.eu/pulscms-transforms/1/zI6k9kpTURBXy8yMzRlMTBmNDBmMzg0YTFjZDZiYjczZDIxZTc2YzE3MC5qcGeSlQLNAxQAwsOVAgDNAvjCw4GhMAU',
-    desc: `Eggs over nachos. It's tasty, OMG!!!`,
+      'https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/menu/Heuvos_Rancheros.jpeg?raw=true',
+    desc: `Eggs over nachos. It's tasty, OMG!!! Like seriously, this will make you want to slap somebody, its that good!`,
   },
   {
     id: 3,
     title: 'Tri-Tip Nachos',
     category: 'Lunch Nachos',
     price: 1000,
-    img: 'https://www.chefspencil.com/wp-content/uploads/Suya.jpg',
+    img: 'https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/menu/Tri_Tip_Nachos.jpeg?raw=true',
     desc: `This is simply a nicely cut beef that is spiced and grilled over an open flame.`,
   },
   {
@@ -30,7 +30,7 @@ const menu = [
     category: 'Lunch Nachos',
     price: 1200,
     img:
-      'https://ocdn.eu/pulscms-transforms/1/r3Rk9kpTURBXy9hOWMwMmU0MWFmOTBkMTM0ZjEyOTAzM2NmZTM2OWE0NS5qcGeSlQLNAxQAwsOVAgDNAvjCw4GhMAU',
+      'https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/menu/Taco_Bus.jpeg?raw=true',
     desc: `We needed a funny name for nachos. Its a Taco Bus!`,
   },
   {
@@ -39,7 +39,7 @@ const menu = [
     category: 'Dinner Nachos',
     price: 2500,
     img:
-      'https://img.buzzfeed.com/buzzfeed-static/static/2019-01/14/17/asset/buzzfeed-prod-web-06/sub-buzz-25688-1547505890-13.jpg?output-quality=auto&output-format=auto',
+      'https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/menu/Regular_Nachos.jpeg?raw=true',
     desc: `You've had nachos before. Just like these, but better.`,
   },
   {
@@ -48,8 +48,8 @@ const menu = [
     category: 'Dinner Nachos',
     price: 2200,
     img:
-      'https://shop4younow.com.ng/317-large_default/ofada-rice-sauce-per-portion.jpg',
-    desc: `Mexican steak covered nachos!`,
+      'https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/menu/Carne_Asada.jpeg?raw=true',
+    desc: `Mexican steak covered nachos! Old secret family recipe. Highly recommended!`,
   }  
 ]
 export default menu
