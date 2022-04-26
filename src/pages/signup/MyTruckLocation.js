@@ -56,9 +56,7 @@ const updateDay = ((e, value) =>
   // console.log("day array ", dayLocation)
   return (
     <>
-    <div className="registration-container">
-      
-            
+    <div className="registration-container"> 
         <MapContainer
           id="signup-map" 
           center={[53.5456, -113.4903]} 
@@ -85,7 +83,7 @@ const updateDay = ((e, value) =>
           </Stack>
         </div>       
       <div className="signup-truck-container">
-        <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl}/>
+        <SignUpATruck cords={cords} dayLocation={dayLocation} setUrl={props.setUrl} selectedDay={location}/>
       </div>
     </div>
     

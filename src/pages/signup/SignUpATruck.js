@@ -44,6 +44,23 @@ export default function SignUpATruck(props) {
     })    
   }
 
+  let dayObj = {
+    monday: "day",
+    tuesday: "day",
+    wednesday: "day",
+    thursday: "day",
+    friday: "day",
+    saturday: "day",
+    sunday: "day",
+  }
+  
+  let highlighted = "day" 
+  for (let day in dayObj) {
+  if(props.selectedDay === day) {
+    dayObj[day] = "day-selected"
+  }
+}
+
   return (       
     <form  onSubmit={handleSubmit} className="registration-form">
       <div className='registration-title'>Food Truck Registration</div>
@@ -92,37 +109,37 @@ export default function SignUpATruck(props) {
           </thead>
           <tbody>
             <tr>
-              <td className="day">Monday</td>
+              <td className={dayObj.monday}>Monday</td>
               <td>{props.dayLocation[1].lat}</td>
               <td>{props.dayLocation[1].lng}</td>
             </tr>
             <tr>
-              <td className="day">Tuesday</td>
+              <td className={dayObj.tuesday}>Tuesday</td>
               <td>{props.dayLocation[2].lat}</td>
               <td>{props.dayLocation[2].lng}</td>
             </tr>
             <tr>
-              <td className="day">Wednesday</td>
+              <td className={dayObj.wednesday}>Wednesday</td>
               <td>{props.dayLocation[3].lat}</td>
               <td>{props.dayLocation[3].lng}</td>
             </tr>
             <tr>
-              <td className="day">Thursday</td>
+              <td className={dayObj.thursday}>Thursday</td>
               <td>{props.dayLocation[4].lat}</td>
               <td>{props.dayLocation[4].lng}</td>
             </tr>
             <tr>
-              <td className="day">Friday</td>
+              <td className={dayObj.friday}>Friday</td>
               <td>{props.dayLocation[5].lat}</td>
               <td>{props.dayLocation[5].lng}</td>
             </tr>
             <tr>
-              <td className="day">Saturday</td>
+              <td className={dayObj.saturday}>Saturday</td>
               <td>{props.dayLocation[6].lat}</td>
               <td>{props.dayLocation[6].lng}</td>
             </tr>
             <tr>
-              <td className="day">Sunday</td>
+              <td className={dayObj.sunday}>Sunday</td>
               <td>{props.dayLocation[7].lat}</td>
               <td>{props.dayLocation[7].lng}</td>
             </tr>
