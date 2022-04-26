@@ -37,19 +37,19 @@
   display: flex; 
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.7em;
   color: white;
 }
 
 #nav-items:hover {
-  color: white;
+  color: rgb(165, 164, 164);
 }
 
-#nav-items > div {
+#link {
+  color: white;
   padding: 10px;
   margin: 10px;
-  border: 2px solid whitesmoke;
+  border: 2px solid whitesmoke;  
 }
-
 
 

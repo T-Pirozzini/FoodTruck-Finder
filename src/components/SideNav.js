@@ -10,7 +10,7 @@ export default function SideNav(props) {
 
   /* Set the width of the side navigation to 100px */
 function openNav() {
-  document.querySelector(".side-nav-icons").style.width = "100px";
+  document.querySelector(".side-nav-icons").style.width = "100px";  
 }
 
 /* Set the width of the side navigation to 0 */
@@ -26,12 +26,12 @@ function closeNav() {
         <span className="open-btn arrow" onClick={openNav}><BsChevronDoubleDown /></span>
       </div>         
       <div className="side-nav-icons">         
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/bbq")}><FaDrumstickBite /></div>       
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/coffee")}><FaCoffee /></div>
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/burger")}><FaHamburger /></div>
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/potato")}><GiPotato /></div>
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/nachos")}><GiNachos /></div>
-        <div onClick={()=> props.setUrl("http://localhost:3002/trucks/dessert")}><FaIceCream /></div>
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/bbq`)}><FaDrumstickBite /></div>       
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/coffee`)}><FaCoffee /></div>
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/burgers`)}><FaHamburger /></div>
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/potato`)}><GiPotato /></div>
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/nachos`)}><GiNachos /></div>
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/dessert`)}><FaIceCream /></div>
         <span className="close-btn" onClick={closeNav}><BsXLg /></span>
       </div>
       

@@ -15,8 +15,8 @@ export default function Nav(props) {
       
       <div id="nav-items">      
         {/* <div className="link">Favourites</div> */}
-        <div><Link to="/signup">Add Truck</Link></div>
-        <div><Link to="/login">Logout</Link></div>
+        <Link to="/signup"><div id="link" style={{color: "white"}}>Add Truck</div></Link>
+        <Link to="/login"><div id="link" style={{color: "white"}}>Logout</div></Link>
       </div>           
     </div>
   )
