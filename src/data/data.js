@@ -44,7 +44,7 @@ const menu = [
   },
   {
     id: 6,
-    title: 'Carne Asada Nachos',
+    title: 'Carne Asada',
     category: 'Dinner Nachos',
     price: 2200,
     img:

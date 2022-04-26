@@ -34,9 +34,11 @@ export default function SignUpATruck(props) {
       body: JSON.stringify(attributes)    
    
     }).then(() => {
-      console.log("Truck Registered");      
-      props.setUrl("http://localhost:3002/trucks")
-      navigate("/")       
+      console.log(`New Url has been set for ${name}`);     
+      props.setUrl("http://localhost:3002/trucks")     
+    }).then(() => {
+      console.log(`redirect`)
+      navigate("/")      
     }).catch ((err)=>{
       console.log(err)
     })    
