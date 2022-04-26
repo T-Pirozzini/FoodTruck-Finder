@@ -16,8 +16,7 @@
   display: flex;
   align-items: center; 
   z-index: 100;
-  font-family: 'Permanent Marker', cursive;
-      
+  font-family: 'Permanent Marker', cursive;      
 }
 #title {
   padding: 1em;
@@ -40,11 +39,9 @@
   font-size: 1.7em;
   color: white;
 }
-
 #nav-items:hover {
   color: rgb(165, 164, 164);
 }
-
 #link {
   color: white;
   padding: 10px;
