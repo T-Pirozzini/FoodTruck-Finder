@@ -55,9 +55,9 @@ app.get("/trucks", async (req, res) => {
 
 // Day of the week filter request
 app.get("/trucks/:day", async (req, res) => {
-  const keyword = req.params.day  
-  console.log("KEYWORD", keyword)
-  pool.query(`SELECT * FROM trucks JOIN locations ON locations.trucks_id = trucks.id WHERE locations.day = '${keyword}';`, function (err, result) {
+  const day = req.params.day  
+  console.log("KEYWORD", day)
+  pool.query(`SELECT * FROM trucks JOIN locations ON locations.trucks_id = trucks.id WHERE locations.day = '${day}';`, function (err, result) {  
     if (err) {
       return console.error("error running query", err);
     }
@@ -69,10 +69,14 @@ app.get("/trucks/:day", async (req, res) => {
 });
 
 // Food Type Filter Request
-app.get("/trucks/:keyword", async (req, res) => {
-  const keyword = req.params.keyword  
-  console.log(keyword)
-  pool.query(`SELECT * FROM trucks WHERE info LIKE '%${keyword}%';`, function (err, result) {
+app.get("/trucks/:day/:filter", async (req, res) => {
+  console.log("params", req.params)
+  const keyword = req.params.filter
+  const day = req.params.day 
+  // console.log("req.params", req.params) 
+  console.log("keyword:", keyword) 
+  console.log("DAY:", day)
+  pool.query(`SELECT * FROM trucks JOIN locations ON locations.trucks_id = trucks.id WHERE info LIKE '%${keyword}%' AND locations.day= '${day}';`, function (err, result) {
     if (err) {
       return console.error("error running query", err);
     }

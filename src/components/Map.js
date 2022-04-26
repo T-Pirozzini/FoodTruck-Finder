@@ -9,23 +9,17 @@ import { Link } from 'react-router-dom';
 
 //styles
 import "./Map.css";
-
 import 'leaflet/dist/leaflet.css';
 
 const truckIcon = new L.Icon({
-  iconUrl: require("../assets/food-truck.png"),
-  // iconRetinaUrl: ,  
+  iconUrl: require("../assets/food-truck.png"),    
   popupAnchor: [1, -1],
-  iconSize: [55, 55],
-  // shadowUrl: "https://cdn-icons-png.flaticon.com/128/7314/7314532.png",
-  // shadowSize: [68, 95],
-  // shadowAnchor: [20, 92]
+  iconSize: [55, 55],  
 });
-
-
 
 export default function Map(props) {
   const [expand, setExpand] = useState(false);
+  const [day, setDay] = useState("monday");
                 
   const updatePoints = (truck) => {
     const array_copy = props.pins.map((element) => {   
@@ -42,15 +36,13 @@ export default function Map(props) {
   };
   
   return (
-    <>
-    
+    <>    
     <div className="map-container">
-      <Schedule setUrl={props.setUrl}/>
+      <Schedule setUrl={props.setUrl} setDay={setDay} day={day}/>
       <MapContainer center={[53.5456, -113.4903]} zoom={13} scrollWheelZoom={true}>
           
           <TileLayer
-            attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`"
-  );'
+            attribution='&copy; "<a href=  `© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>`");'
             url={"https://api.mapbox.com/styles/v1/tpirozzini/cl29e9qcl000115n0dxc7a0i7/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidHBpcm96emluaSIsImEiOiJjbDI5ZTVnbXAwZnUzM2tydGF6aW5xaHR3In0.tSzKVLnd-wE5MYRZ9Qfbhw"}
             />
             {props.pins.map((truck) => {
@@ -80,7 +72,7 @@ export default function Map(props) {
                       );
                     })}              
         </MapContainer>
-        <SideNav setUrl={props.setUrl} />
+        <SideNav setUrl={props.setUrl}  day={day}/>
       </div>
             
       
