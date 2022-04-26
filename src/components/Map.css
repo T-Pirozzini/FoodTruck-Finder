@@ -35,3 +35,17 @@
 .leaflet-control-zoom-in, .leaflet-control-zoom-out {  
   border: 2px solid rgb(13, 4, 131);   
 }
+
+.image-container {
+  border: 2px solid rgb(10, 10, 10); 
+}
+
+.leaflet-popup {
+  max-width: 4000px;
+  
+}
+
+.leaflet-tooltip {
+  font-size: 1.5em;
+  font-weight: 600;
+}
