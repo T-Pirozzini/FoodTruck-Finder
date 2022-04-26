@@ -2,9 +2,10 @@
 import './SideNav.css'
 import React from 'react'
 
-import { FaDrumstickBite, FaCoffee, FaHotdog, FaHamburger, FaIceCream } from "react-icons/fa";
+// icons
+import { FaDrumstickBite, FaCoffee, FaHamburger, FaIceCream } from "react-icons/fa";
 import { BsXLg, BsChevronDoubleDown } from "react-icons/bs";
-import { GiPotato, GiNachos } from "react-icons/gi";
+import { GiPotato, GiNachos, GiFoodTruck } from "react-icons/gi";
 
 export default function SideNav(props) {
 
@@ -26,6 +27,7 @@ function closeNav() {
         <span className="open-btn arrow" onClick={openNav}><BsChevronDoubleDown /></span>
       </div>         
       <div className="side-nav-icons">         
+        <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/`)}><GiFoodTruck /></div>
         <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/bbq`)}><FaDrumstickBite /></div>       
         <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/coffee`)}><FaCoffee /></div>
         <div onClick={()=> props.setUrl(`http://localhost:3002/trucks/${props.day}/burgers`)}><FaHamburger /></div>

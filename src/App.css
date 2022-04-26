@@ -2,7 +2,8 @@
   background-color: #eba755;
   background-image: url("https://www.transparenttextures.com/patterns/food.png");
   text-align: center;
-  color: whitesmoke;  
+  color: whitesmoke;
+  /* height: 100vh;   */
 }
 
 a, .link{
