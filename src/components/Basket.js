@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 //components
-import Stripe from './Stripe';
+import Stripe from "./Stripe";
 
 // styles
-import "./MenuBasket.css"
+import "./MenuBasket.css";
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
@@ -31,48 +31,48 @@ export default function Basket(props) {
                 </button>
               </div> */}
               <div className="col-2 text-right">
-              <button onClick={() => onRemove(item)} className="remove">
+                <button onClick={() => onRemove(item)} className="remove">
                   -
-                </button>{' '}
+                </button>{" "}
                 <button onClick={() => onAdd(item)} className="add">
                   +
                 </button>
-
                 {item.qty} x ${(item.price / 100).toFixed(2)}
               </div>
             </div>
-          
-        ))}
+          ))}
 
-        {cartItems.length !== 0 && (
-          <>
-            <hr></hr>
-            <div className="row">
-              <div className="col-2">Items Price</div>
-              <div className="col-1 text-right">${(itemsPrice / 100).toFixed(2)}</div>
-            </div>
-            <div className="row">
-              <div className="col-2">Tax Price</div>
-              <div className="col-1 text-right">${(taxPrice / 100).toFixed(2)}</div>
-            </div>            
+          {cartItems.length !== 0 && (
+            <>
+              <hr></hr>
+              <div className="row">
+                <div className="col-2">Items Price</div>
+                <div className="col-1 text-right">
+                  ${(itemsPrice / 100).toFixed(2)}
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-2">Tax Price</div>
+                <div className="col-1 text-right">
+                  ${(taxPrice / 100).toFixed(2)}
+                </div>
+              </div>
 
-            <div className="row">
-              <div className="col-2">
-                <strong>Total Price</strong>
+              <div className="row">
+                <div className="col-2">
+                  <strong>Total Price</strong>
+                </div>
+                <div className="col-1 text-right">
+                  <strong>${(totalPrice / 100).toFixed(2)}</strong>
+                </div>
               </div>
-              <div className="col-1 text-right">
-                <strong>${(totalPrice / 100).toFixed(2)}</strong>
+              <hr />
+              <div className="row">
+                <Stripe price={totalPrice.toFixed(2)} />
               </div>
-            </div>
-            <hr />
-            <div className="row">
-              <Stripe
-                price={totalPrice.toFixed(2)}
-               />
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          )}
+        </div>
       </aside>
     </div>
   );

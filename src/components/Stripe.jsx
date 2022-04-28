@@ -4,6 +4,13 @@ import { useState } from 'react';
 // require("dotenv").config();
 import { useNavigate } from "react-router-dom";
 
+// sweet alert
+// import swal from 'sweetalert';
+import Swal from 'sweetalert2'
+
+
+
+
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 
@@ -33,10 +40,17 @@ export default function Stripe(props) {
     }).then((res) => {
       console.log("response", res)
       // props.setUrl("http://localhost:3002/trucks")
-      navigate("/")  
-    })
-    
-    .catch((err) => {
+      navigate("/")
+       
+    }).then((res) => {
+      Swal.fire({
+        position: 'center-center',
+        icon: 'success',
+        title: 'Payment Received!',
+        showConfirmButton: false,
+        timer: 3500
+      })
+    }).catch((err) => {
       console.log(err)
     })
   }

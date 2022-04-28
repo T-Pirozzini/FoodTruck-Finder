@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Categories = ({ categories, filterItems }) => {
   return (
@@ -13,10 +13,10 @@ const Categories = ({ categories, filterItems }) => {
           >
             {category}
           </button>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;
