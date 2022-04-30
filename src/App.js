@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav setUrl={setUrl} />
+        <Nav setUrl={setUrl}  />
 
         <Routes>
           <Route
