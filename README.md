@@ -19,6 +19,7 @@ This is our final large scale project form our schooling at Lighthouse Labs. Thi
 
 
 ## Screenshots
-!["screenshot of creating a appointment."](https://github.com/BBrandford11/scheduler/blob/master/Img/overall%201.png)
-!["screenshot of deleting a appointment"](https://github.com/BBrandford11/scheduler/blob/master/Img/delete.png)
+!["screenshot of creating main page showing food trucks."](https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/readMePics/food%20truck%20main.png?raw=true)
+!["screenshot of registering a new truck"](https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/readMePics/food%20truck%20reg.png?raw=true)
+!["screenshot of paying for a meal"](https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/readMePics/food%20truck%20pay.png?raw=true)
 
