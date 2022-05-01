@@ -2,7 +2,7 @@
 
 ## Description
 
-This is our final large scale project form our schooling at Lighthouse Labs. This is a useful food ordering application designed to help locate and order from food trucks in you area. This project helped teach us about front end development using React and querying our built  elephant PSQL database using ajax and webpack. 
+This is our final large scale project form our schooling at Lighthouse Labs. This is a useful food ordering application designed to help locate and order from food trucks in you area. This project helped teach us about front end development using React and querying our elephant PSQL database. 
 
 ## Authors
 - [Travis Pirozzini ](https://github.com/T-Pirozzini)
