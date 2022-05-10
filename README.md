@@ -1,7 +1,7 @@
 # :hamburger: Food Truck Finder
 
 ## Description
-This application allows users create a profile for their food truck and then update its location throughout the week. A user can browse food trucks in their area and then place and pay for their order. This was our final project for at Lighthouse Labs.
+This application allows users to create a profile for their food truck and then update its location throughout the week. A user can browse food trucks in their area and then place and pay for their order. This was our final project at Lighthouse Labs.
 #### Stack: HTML/CSS/JS/REACT/PostgreSQL
 #### APIs: Leaflet/Mapbox/Stripe
 
