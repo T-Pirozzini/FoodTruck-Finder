@@ -10,6 +10,10 @@ This application allows users to create a profile for their food truck and then 
 - [Manuel Zuniga](https://github.com/Nachosonfriday)
 - [Bryce Brandford](https://github.com/BBrandford11)
 
+## :video_camera: Live Demo
+<a href="https://628686b4787a3b03908a9839--chipper-buttercream-16e62d.netlify.app/">Click Here!</a>
+Please Note: Database is currently disconnected - Check back soon
+
 ## :camera: Screenshots
 ![Main Page](https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/readMePics/food%20truck%20main.png?raw=true)
 ![Truck Registration](https://github.com/T-Pirozzini/LHLFinals-FoodTruckApp/blob/main/src/assets/readMePics/food%20truck%20reg.png?raw=true)
